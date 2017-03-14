@@ -10,7 +10,7 @@
     
     <title>
         
-            HEXO+Github,搭建自己的个人博客 | 
+            初识RxJava | 
         
         lennyup&#39;s Notes
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lennyup.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="HEXO+Github,搭建自己的个人博客 | lennyup&#39;s Notes">
+    <meta property="og:title" content="初识RxJava | lennyup&#39;s Notes">
     <meta property="og:description" content="不得了">
     
 
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置环境"><span class="post-toc-number">1.</span> <span class="post-toc-text">配置环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Github"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置Github</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主题"><span class="post-toc-number">4.</span> <span class="post-toc-text">主题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改头像"><span class="post-toc-number">5.</span> <span class="post-toc-text">修改头像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件简述"><span class="post-toc-number">6.</span> <span class="post-toc-text">配置文件简述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">7.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RxJava是什么"><span class="post-toc-number">1.</span> <span class="post-toc-text">RxJava是什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#API介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">API介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#观察者模式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">观察者模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RxJava的观察者模式"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">RxJava的观察者模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程控制"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">线程控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Scheduler的API"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Scheduler的API</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">总结</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -278,7 +278,7 @@
         
     
             <p class="article-headline-p">
-                HEXO+Github,搭建自己的个人博客
+                初识RxJava
             </p>
         </div>
 
@@ -297,7 +297,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>lennyup</strong>
-        <span>3月 11, 2017</span>
+        <span>3月 14, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -335,7 +335,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/03/11/hexo-github/" class="leancloud-views_num" data-flag-title="HEXO+Github,搭建自己的个人博客">
+                <span id="/2017/03/14/rxjava-first/" class="leancloud-views_num" data-flag-title="初识RxJava">
      &nbsp;浏览量
 </span>
 
@@ -358,7 +358,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HEXO+Github,搭建自己的个人博客&url=https://lennyup.github.io//2017/03/11/hexo-github/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=初识RxJava&url=https://lennyup.github.io//2017/03/14/rxjava-first/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -367,7 +367,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HEXO+Github,搭建自己的个人博客&url=https://lennyup.github.io//2017/03/11/hexo-github/index.html&via=lennyup" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=初识RxJava&url=https://lennyup.github.io//2017/03/14/rxjava-first/index.html&via=lennyup" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -376,7 +376,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/03/11/hexo-github/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/03/14/rxjava-first/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -385,7 +385,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/03/11/hexo-github/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/03/14/rxjava-first/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -409,50 +409,75 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>我将这篇文章，作为我的第一篇文章，是为了记录下来自己搭建这个博客的点滴（ps: 方便回忆）。<br>前几天，看见同事在弄这个，于是乎，自己也搭一个玩玩。经过各种查找资料，各种踩坑之后，终于搭建好了hexo，我的hexo是3.2.0版本的。</p>
-<p>之前有想过写博客，一方面是做笔记，俗话说好脑子不如烂笔头嘛，另一方面就是提高自己的总结能力以及表述能力。现在看好多人都用hexo来弄，还有的用的是Jekyll搭的，有需要的可以去搜搜。好了，下面开始上搭建的步骤。</p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><p>安装 Node （*）</p>
-<p>作用：用来生成静态的页面</p>
-<p>node的安装步骤我就不说了，需要的话可以去<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>。</p>
-<p>安装 Git（*）</p>
-<p> 作用：把部署的东西提交到github上</p>
-<p> 好了，这两个安装好了之后，我们还需要有一个github的账号。点击上角的加号。</p>
-<p> 点击”New repository”，新建一个版本库</p>
-<p> <img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/hexo-github1.png" alt=""></p>
-<p> 输入Repository name:yourname.github.io(yourname与你的注册用户名一致,这个就是你博客的域名了) </p>
-<p> <img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/hexo-github2.png" alt=""></p>
-<p> 创建完版本库之后，如图： 我们要用到它的ssh。到此 github配置久完成了。</p>
-<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>首先创建一个文件夹，我这里建的是<code>blog</code>,用户存放hexo配置的文件<br>接下来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd blog</div><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
-<p> 我用的是npm 你也可以用淘宝的镜像 cnpm， 安装完成之后要对其初始化</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure>
-<p> 到此，安装工作就全部完成了，<code>blog</code>就是你以后博客的根目录了。</p>
-<p> 生成静态文件</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate #(hexo -g  也可以)</div></pre></td></tr></table></figure>
-<p> 生成本地服务器</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p> 在浏览器中输入 <code>http://localhost:4000</code>,就可以看到一个初始化的页面了</p>
-<p> <img src="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701029.png" alt=""></p>
-<h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><p>我们打来我们之前建的文件 <code>blog</code>可以看到里面的东西：</p>
-<p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/hexo-github3.png" alt=""></p>
-<p>现在我们需要和github建立关联，打开<code>_config.yml</code>文件，到最下面，改成这个样子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">     type: git</div><div class="line">     repo: https://github.com/lennyup/lennyup.github.io.git</div><div class="line">     branch: master</div></pre></td></tr></table></figure>
-<p> repo后面是之前我们说过的版本库的ssh，改成自己的就可以了。</p>
-<p> 然后呢，我们需要下载一个关于git的一个插件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p> 安装完成后，最后一步的命令是：<code>$ hexo deploy</code></p>
-<p>  见证奇迹的时刻来了，在浏览器中输入<a href="https://lennyup.github.io/">https://lennyup.github.io/</a>, 把<code>lennyup</code>换成你自己的账户名就好了。打开后，我们搭建的个人博客就完成了（ps: 简单吗？）<br>每次部署的时候要执行三部：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure>
-<p> 在这里，简单说下一些常用的命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">hexo new&quot;postName&quot; #新建文章</div><div class="line"></div><div class="line">hexo new page&quot;pageName&quot; #新建页面</div><div class="line"></div><div class="line">hexo generate #生成静态页面至public目录</div><div class="line"></div><div class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line"></div><div class="line">hexo deploy #将.deploy目录部署到GitHub</div><div class="line"></div><div class="line">hexo help # 查看帮助</div><div class="line"></div><div class="line">hexo version #查看Hexo的版本</div></pre></td></tr></table></figure>
-<p> 还有一个主意的点，<code>hexo new &quot;postName</code> 命令之后，可以在我们的<code>blog/source/_post</code>目录下找到我们新的文章，然后用<code>MarkDown</code> 语法来编写你的文章吧，关于<code>MarkDown</code>的语法可以看这里<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">参考一</a></p>
-<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>大部分主题在这里<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">here</a>，<br>里面有详细的使用方法<br>换主题的话在这里，打开<code>_config.yml</code>，找到theme,换成自己想要换的就行了（ps: theme文件里有你要换的主题文件夹）</p>
-<h2 id="修改头像"><a href="#修改头像" class="headerlink" title="修改头像"></a>修改头像</h2><p>打开<code>blog/theme/yourtheme</code>里面有个<code>_config.yml</code>文件，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">img:</div><div class="line">...</div><div class="line">avatar:</div></pre></td></tr></table></figure>
-<p>把<code>avatar</code>后面的改成自己的就好了</p>
-<h2 id="配置文件简述"><a href="#配置文件简述" class="headerlink" title="配置文件简述"></a>配置文件简述</h2><p>可以看出大多数的修改都是在 <code>blog/_config.yml</code>这个文件。这里简单说下它里面的内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">#博客名称</div><div class="line">title: 我的博客</div><div class="line">#副标题</div><div class="line">subtitle: </div><div class="line">#简介</div><div class="line">description: </div><div class="line">#博客作者</div><div class="line">author: John Doe</div><div class="line">#博客语言</div><div class="line">language: zh-CN</div><div class="line">#时区</div><div class="line">timezone:</div><div class="line"></div><div class="line">#博客地址,与申请的GitHub一致</div><div class="line">url: http://lennyup.github.io</div><div class="line">root: /</div><div class="line">#博客链接格式</div><div class="line">permalink: :year/:month/:day/:title/</div><div class="line">permalink_defaults:</div><div class="line"></div><div class="line">source_dir: source</div><div class="line">public_dir: public</div><div class="line">tag_dir: tags</div><div class="line">archive_dir: archives</div><div class="line">category_dir: categories</div><div class="line">code_dir: downloads/code</div><div class="line">i18n_dir: :lang</div><div class="line">skip_render:</div><div class="line"></div><div class="line">new_post_name: :title.md # File name of new posts</div><div class="line">default_layout: post</div><div class="line">titlecase: false # Transform title into titlecase</div><div class="line">external_link: true # Open external links in new tab</div><div class="line">filename_case: 0</div><div class="line">render_drafts: false</div><div class="line">post_asset_folder: false</div><div class="line">relative_link: false</div><div class="line">future: true</div><div class="line">highlight:</div><div class="line">  enable: true</div><div class="line">  line_number: true</div><div class="line">  auto_detect: true</div><div class="line">  tab_replace:</div><div class="line"></div><div class="line">default_category: uncategorized</div><div class="line">category_map:</div><div class="line">tag_map:</div><div class="line"></div><div class="line">#日期格式</div><div class="line">date_format: YYYY-MM-DD</div><div class="line">time_format: HH:mm:ss</div><div class="line"></div><div class="line">#分页，每页文章数量</div><div class="line">per_page: 10</div><div class="line">pagination_dir: page</div><div class="line"></div><div class="line">#博客主题</div><div class="line">theme: landscape</div><div class="line"></div><div class="line">#发布设置</div><div class="line">deploy: </div><div class="line">  type: git</div><div class="line">  #lennyup改为你的github用户名</div><div class="line">  repository: https://github.com/lennyup/lennyup.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到此，基本的一些内容已经介绍完了，关于主题的一些更炫酷的设置，就要看响应主题的使用了。</p>
+        <p>自打进入公司以来，一直用的是React Native，以及 React + WebView的结构来写代码，对原生的一些知识学习落后了许多。老是听朋友说什么 RxJava，一脸懵逼。现在，趁闲暇之时，补充下Android知识，在这里简单说下对RxJava的理解。</p>
+<p>在开始之前呢，先要说下其github以及要依赖的包，由于现在 RxJava2已经有了一段时间了，但是对于小白的我来说，还是先从1开始吧。</p>
+<p>GitHub:</p>
+<p><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a><br><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">https://github.com/ReactiveX/RxAndroid</a></p>
+<p>引入的依赖：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">compile &apos;io.reactivex:rxjava:1.2.7&apos;</div><div class="line">compile &apos;io.reactivex:rxandroid:1.2.1&apos;</div></pre></td></tr></table></figure>
+<h2 id="RxJava是什么"><a href="#RxJava是什么" class="headerlink" title="RxJava是什么"></a>RxJava是什么</h2><p>相信所有初学者应该和我一样，对于这个很陌生，我们看下github上对其介绍：<code>RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.</code><br>(大概意思是说 这是一个在VM上使用可观察的序列来组成异步、基于事件的库)</p>
+<p>这里我们就可以总结的说 RxJava是一个实现异步操作的类。异步实现 ？那我们之前也写过很多呀 像 AsyncTask / Handler / XXX / …<br>那为什么现在大家都在用 RxJava呢 ？带着疑问我们来简单说下它的一些用法。</p>
+<h2 id="API介绍"><a href="#API介绍" class="headerlink" title="API介绍"></a>API介绍</h2><p>首先，RxJava的异步实现是通过观察者模式实现的。</p>
+<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p>观察者模式是这样的：A 对象（观察者）对 B 对象（被观察者）的某种变化高度敏感，需要在 B 变化的一瞬间做出反应。举个开发中的例子就是点击监听器<code>OnClickListener</code>,程序中的观察者是采用注册(Register)或者是订阅(Subscribe)的关系来告诉被观察者的。<br>OnClickListener的模式大致如图：<br><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rx42h1wgj20fz03rglt.jpg" alt=""><br>当<code>Button</code>被点击之后，会通过<code>setOnClickListener</code>方法中的<code>OnClick</code>来通知器点击状态的。<br>那么转换成观察者模式就是这样<br><img src="http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4446ldj20ga03p74h.jpg" alt=""></p>
+<h3 id="RxJava的观察者模式"><a href="#RxJava的观察者模式" class="headerlink" title="RxJava的观察者模式"></a>RxJava的观察者模式</h3><p>RxJava有这几个概念：<code>Observable</code>(被观察者)、<code>Observer</code>(观察者)、<code>subscribe</code>订阅、事件。<code>Observer</code>和<code>Observable</code>通过<code>subscribe</code>来实现订阅关系。<code>Observable</code>需要的时候通过<code>subscribe</code>来通知<code>Observer</code>。</p>
+<p>RxJava的回调事件有三个：</p>
+<ul>
+<li><code>onNext</code>: 相当于<code>OnClickListener</code>中的<code>OnClick</code>;</li>
+<li><code>onError</code>:事件队列异常。与下面的<code>onCompleted</code>互斥。</li>
+<li><code>onCompleted</code>：事件队列完成。当不会再有<code>onNext</code>发出时，会触发<code>onCompleted</code></li>
+</ul>
+<p>###基本实现<br>(1) Observer</p>
+<p>观察者，决定触发时执行的动作。实现方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Observer&lt;String&gt; observer = new Observer&lt;String&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void onCompleted() &#123;</div><div class="line">                Log.w(TAG, &quot;Observer onCompleted&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onError(Throwable e) &#123;</div><div class="line">                Log.w(TAG, &quot;Observer onError&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onNext(String s) &#123;</div><div class="line">                Log.w(TAG, &quot;Item &quot; + s);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+<p>此外，还有一种Observer的实现方式 <code>Subscriber</code>,它是observer的一个扩展抽象类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Subscriber&lt;String&gt; subscriber = new Subscriber&lt;String&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void onCompleted() &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onError(Throwable e) &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onNext(String s) &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onStart() &#123;</div><div class="line">                super.onStart();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
+<p><code>subscriber</code>比<code>observer</code>多几个方法。这里只说其中的两个：</p>
+<ul>
+<li><code>onStart()</code>它会在 subscribe 刚开始，而事件还未发送之前被调用，可以用于做一些准备工作，例如数据的清零或重置。如果所要做的操作对于线程有要求，那么这个方法就不适合了。</li>
+<li><code>unsubscribe()</code>用于取消订阅，可以通过<code>isUnsubscribed()</code>来判断下状态。 </li>
+</ul>
+<p>(2) Observable</p>
+<p>被观察者，决定什么时候触发以及触发什么事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Observable observable = Observable.create(new Observable.OnSubscribe&lt;String&gt;()&#123;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void call(Subscriber&lt;? super String&gt; subscriber) &#123;</div><div class="line">                observer.onNext(&quot;Hi&quot;);</div><div class="line">                observer.onNext(&quot;who are you&quot;);</div><div class="line">                observer.onNext(&quot;I am Li&quot;);</div><div class="line">                observer.onCompleted();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<p>(ps: 现在这种方式已经被废弃了)</p>
+<p>还有另几种创建方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Observable observable = Observable.just(&quot;Hi&quot;, &quot;Who are you&quot;, &quot;I am Li&quot;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String [] s = &#123;&quot;Hi&quot;, &quot;who are you&quot;, &quot;I am Li&quot;&#125;;</div><div class="line">Observable observable1 = Observable.from(s);</div></pre></td></tr></table></figure>
+<p>(3) Subscribe (订阅)<br>将<code>Observable</code>和<code>Observer</code>关联起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">observable.subscribe(observer);</div></pre></td></tr></table></figure>
+<h3 id="线程控制"><a href="#线程控制" class="headerlink" title="线程控制"></a>线程控制</h3><p>你会了上边的那些步骤，并不代表你已经入门了，以为RxJavaz最主要的概念是<code>异步</code>,这样就引出了我们要说的线程控制——Scheduler，比如说我们加载图片，然后显示在屏幕上。这就需要Scheduler了。</p>
+<h4 id="Scheduler的API"><a href="#Scheduler的API" class="headerlink" title="Scheduler的API"></a>Scheduler的API</h4><p>在不指定线程的情况下，RxJava是不会改变线程的。在RxJava中， Scheduler相当于线程控制器，用来指定每段代码多运行在什么样的线程上。来看下它适合哪些场景：</p>
+<ul>
+<li><code>Schedulers.immediate()</code>: 默认的，直接运行在当前线程。</li>
+<li><code>Schedulers.newThread()</code>: 新线程。</li>
+<li><code>Schedulers.io()</code>: I/O线程（读写文件、读写数据库、网络信息交互）</li>
+<li><code>Schedulers.computation()</code>：CPU密集型计算所使用的线程。</li>
+<li><code>AndroidSchedulers.mainThread()</code>: 主线程。</li>
+</ul>
+<p>对线程控制的话，通过<code>subscribeOn()</code>和<code>observeOn()</code>这两个方法</p>
+<ul>
+<li><code>subscribeOn</code>: 指定<code>subscribe</code>所发生的线程。即事件发生的线程。</li>
+<li><code>observeOn</code>：事件消费线程，<code>Subscriber</code>所运行在的线程。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"> String [] s = &#123;&quot;Hi&quot;, &quot;who are you&quot;, &quot;I am Li&quot;&#125;;</div><div class="line">        Observable.from(s)</div><div class="line">                .subscribeOn(Schedulers.io()) </div><div class="line">                .observeOn(AndroidSchedulers.mainThread())</div><div class="line">                .subscribe(new Action1&lt;String&gt;() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void call(String s) &#123;</div><div class="line">                        Log.w(TAG, &quot;Item &quot; + s);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">``` </div><div class="line"></div><div class="line">上述代码中，由于`subscribeOn(Schedulers.io())`指定，所以创建事件的内容就发生在 I/O线程中。`observeOn(AndroidSchedulers.mainThred)`这句话的指定，数据的打印将发生在主线程中。</div><div class="line"></div><div class="line">### 变换</div><div class="line">RxJava提供了对事件变换的机制，这是它的核心之一，也是上面我们所提出的疑问，为什么它会这么火的原因之一。`变换`: 将事件序列中的事件活着整个序列进行加工处理，变成另一个事件或序列。</div><div class="line"></div><div class="line">简单举个例子：</div></pre></td></tr></table></figure>
+<p>Observable.just(1,2,3,4)<br>                .map(new Func1<integer, string="">() {<br>                    @Override<br>                    public String call(Integer integer) {<br>                        return “” + integer;<br>                    }<br>                })<br>                .subscribe(new Action1<string>() {<br>                    @Override<br>                    public void call(String s) {<br>                        Log.w(TAG, s);<br>                    }<br>                });<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">相信有js经验的人会对 `.map`这种形式比较熟悉，这里的`.map`会使每个int 转换成string对象返回。这里又引出了另一个类`Func1`，`FuncX`和`ActionX`的区别在于是否有返回值，X代表是几个参数。</div><div class="line"></div><div class="line">* `map()`事件对象直接对换。示意图如下：</div><div class="line"></div><div class="line">![](http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4fitvfj20hw0ea0tg.jpg)</div><div class="line"></div><div class="line">这里引出一个比较难理解的方法`flatMap()`，先来看一个例子：</div></pre></td></tr></table></figure></string></integer,></p>
+<p>Student[] students = …;<br>Subscriber<course> subscriber = new Subscriber<course>() {<br>    @Override<br>    public void onNext(Course course) {<br>        Log.d(TAG, course.getName());<br>    }<br>    …<br>};<br>Observable.from(students)<br>    .flatMap(new Func1<student, observable<course="">&gt;() {<br>        @Override<br>        public Observable<course> call(Student student) {<br>            return Observable.from(student.getCourses());<br>        }<br>    })<br>    .subscribe(subscriber);<br>```</course></student,></course></course></p>
+<p>从这个例子中可以看出，<code>flatMap</code>和<code>map</code>一样，都使一个对象转换成另一个对象，但是仔细看会发现，<code>flatMap</code> 返回的是一个 Observable 对象，并且并不是直接放到Subsciber的回调里。</p>
+<p><code>flatMap()</code> 的原理是这样的：</p>
+<ol>
+<li>使用传入的事件对象创建一个 <code>Observable</code>对象；</li>
+<li>并不发送这个 <code>Observable</code>, 而是将它激活，于是它开始发送事件;</li>
+<li>每一个创建出来的 <code>Observable</code> 发送的事件，都被汇入同一个 <code>Observable</code>，而这个 <code>Observable</code> 负责将这些事件统一交给 <code>Subscriber</code> 的回调方法。</li>
+</ol>
+<p>这三个步骤，把事件拆成了两级，通过一组新创建的<code>Observable</code> 将初始的对象『铺平』之后通过统一路径分发了下去。而这个『铺平』就是 <code>flatMap()</code> 所谓的 <code>flat</code>。</p>
+<p><code>flatMap()</code>示意图：<br><img src="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4i8da2j20hg0dydgx.jpg" alt="图片来自网络"></p>
+<p><code>flatMap()</code>常用于嵌套的异步操作中</p>
+<p>其实还有很多其他的变换方式，这里就不一一说了，他们的共同点在于对世间序列的封装处理和再发送。在RxJava内部，它们都基于一个方法：<code>lift()</code></p>
+<p>前面说到，利用<code>subscribeOn</code>和<code>observeOn</code>来实现线程控制，让事件的产生和消费在不同的线程中。那么，能否多次切换线程呢。答案是可以的。我们通过图开说下两者的原理</p>
+<p><code>subscribeOn()</code> 原理图：<br><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rxcynbsuj20ha0d7wg2.jpg" alt=""></p>
+<p><code>observeOn()</code> 原理图：<br><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rxd05lttj20hj0cyabl.jpg" alt=""></p>
+<p>从图中可以看出两者线程切换的不同。<code>subscribeOn()</code> 的线程切换发生在 <code>OnSubscribe</code> 中，即在它通知上一级 <code>OnSubscribe</code> 时，这时事件还没有开始发送，因此 <code>subscribeOn()</code> 的线程控制可以从事件发出的开端就造成影响；而 <code>observeOn()</code> 的线程切换则发生在它内建的 <code>Subscriber</code> 中，即发生在它即将给下一级 <code>Subscriber</code> 发送事件时，因此 <code>observeOn()</code> 控制的是它后面的线程。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于了解的比较晚，所以只能浅显的说下它的基本用法和原理。现在来说，开源的时代已经来了，所以没事的话，可以多看看其源码。<br>（ps: atlas刚昨天开源，有兴趣的可以去看看 <a href="http://atlas.taobao.org/docs/" target="_blank" rel="external">atlas</a>）</p>
 
     
 
@@ -481,9 +506,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2017/03/11/hexo-github/"
-        data-url="https://lennyup.github.io/2017/03/11/hexo-github/"
-        data-title="HEXO+Github,搭建自己的个人博客" id="ds-thread">
+        data-thread-key="2017/03/14/rxjava-first/"
+        data-url="https://lennyup.github.io/2017/03/14/rxjava-first/"
+        data-title="初识RxJava" id="ds-thread">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -500,19 +525,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/03/14/rxjava-first/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2017/03/11/hexo-github/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
