@@ -10,7 +10,7 @@
     
     <title>
         
-            归档: 2017 | 
+            算法——初篇 | 
         
         lennyup&#39;s Notes
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lennyup.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | lennyup&#39;s Notes">
+    <meta property="og:title" content="算法——初篇 | lennyup&#39;s Notes">
     <meta property="og:description" content="不得了">
     
 
@@ -216,352 +216,342 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间复杂度"><span class="post-toc-number">1.</span> <span class="post-toc-text">时间复杂度</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间频度"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">时间频度</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#时间复杂度-1"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">时间复杂度</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linked-List"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Linked List</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Stack"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Stack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Queue"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Queue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Tree"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Tree</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Binary-Tree"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Binary Tree</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Binary-Search-Tree"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Binary Search Tree</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Trie"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">Trie</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/14/cardview-first/">Materal Design 之 CardView</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近看一些大佬的自定义view，其中用到了CardView，感觉好高大上，赶紧去恶补一下。（我默默的打开了源码）
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/14/cardview-first/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/14/cardview-first/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/20/algorithm/">算法——初篇</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            作为一个经常在算法课上逃课的孩子，写这个有些尴尬，因为算法真的是太枯燥了，但是作为一个程序员，算法还是一定要会的（ps：许多大公司面试的时候特爱考）...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/20/algorithm/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/20/algorithm/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/16/rxjava-retrofit/">初识rxjava（二）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            上一篇，简单的认识了最近火爆异常的RxJava,如果你对RxJava还是很陌生，你可以去网上找一下相关知识，当然也可以看我的上一篇文章
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/16/rxjava-retrofit/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/16/rxjava-retrofit/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/14/rxjava-first/">初识RxJava</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            自打进入公司以来，一直用的是React Native，以及 React + WebView的结构来写代码，对原生的一些知识学习落后了许多。老是听朋友...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/14/rxjava-first/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/14/rxjava-first/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/11/hexo-github/">HEXO+Github,搭建自己的个人博客</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            我将这篇文章，作为我的第一篇文章，是为了记录下来自己搭建这个博客的点滴（ps: 方便回忆）。前几天，看见同事在弄这个，于是乎，自己也搭一个玩...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/11/hexo-github/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/11/hexo-github/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                算法——初篇
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>lennyup</strong>
+        <span>3月 20, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/03/20/algorithm/" class="leancloud-views_num" data-flag-title="算法——初篇">
+     &nbsp;阅读量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        阅读量&nbsp;<span id="busuanzi_value_page_pv"></span>
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=算法——初篇&url=https://lennyup.github.io//2017/03/20/algorithm/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=算法——初篇&url=https://lennyup.github.io//2017/03/20/algorithm/index.html&via=lennyup" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/03/20/algorithm/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/03/20/algorithm/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>作为一个经常在算法课上逃课的孩子，写这个有些尴尬，因为算法真的是太枯燥了，但是作为一个程序员，算法还是一定要会的（ps：许多大公司面试的时候特爱考）。在这里，简单说下几个基本的算法。</p>
+<p>在这之前，说下时间复杂度的概念。</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><h3 id="时间频度"><a href="#时间频度" class="headerlink" title="时间频度"></a>时间频度</h3><p>时间频度：一个算法执行所耗费的时间，从理论上是不能算出来的，必须上机运行测试才知道。但是我们没有必要那么精准的数据，只需要知道哪个算法所话费的时间比较多，哪个比较少就够了。算法的所花费的时间是和它执行的次数成正比的，这样我们只需要关系次数就好了。一个算法中的语句执行次数被称为语句频度或时间频度。记为<code>T(n)</code></p>
+<h3 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>在刚才提到的时间频度中，n称为问题的规模，当n不断变化时没时间频度T(n)也会不断变化。但有时我们想知道它变化时呈现什么规律。为此，我们引入了时间复杂度的概念。一般情况下，算法中基本操作重复执行的次数时问题规模n的某个函数，用T(n)表示，若有某个辅助函数<code>f(n)</code>，使得当<code>n</code>近于无限大时，<code>T(n)f(n)</code>的极限为不等于零的常数，则称为<code>f(n)是T(n)的同数量级函数</code>。记作<code>T(n)=O(f(n))</code>,称<code>O(f(n))</code>为算法的渐进时间复杂度，简称时间复杂度。</p>
+<p>   时间频度不同，但时间复杂度可能相同。如：T(n)=n2+3n+4与T(n)=4n2+2n+1它们的频度不同，但时间复杂度相同，都为O(n2)。</p>
+<p>按数量级递增排列，常见的时间复杂度有：常数阶O(1),对数阶O(log2n),线性阶O(n), 线性对数阶O(nlog2n),平方阶O(n2)，立方阶O(n3),…， k次方阶O(nk),指数阶O(2n)。随着问题规模n的不断增大，上述时间复杂度不断增大，算法的执行效率越低。</p>
+<p>前把时间复杂度的概念说了，是为了为下面的数据结构作铺垫。</p>
+<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h3><ul>
+<li>链表就是有节点<code>(Node)</code>组成的线性集合。每个指针都可以利用指针指向其他节点，它是一种包含多个节点，能够用于表示序列的数据结构。</li>
+<li><strong>单向链表：</strong>链表中每个节点仅指向下个节点，并且最后一个节点指向null</li>
+<li><strong>双向链表：</strong>链表中每个节点有两个指针x、y，x指向下个节点，y指向上个节点。最后一个节点y指向null</li>
+<li>时间复杂度<ul>
+<li>索引<code>O(n)</code></li>
+<li>搜索<code>O(n)</code></li>
+<li>插入<code>O(1)</code></li>
+<li>移除<code>O(1)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h3><ul>
+<li>栈是元素的集合，包括压栈<code>push</code>、移栈<code>pop</code>两个基本操作。</li>
+<li>遵循后入先出的原则（LIFO）</li>
+<li>时间复杂度<ul>
+<li>索引<code>O(n)</code></li>
+<li>搜索<code>O(n)</code></li>
+<li>插入<code>O(1)</code></li>
+<li>移除<code>O(1)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h3><ul>
+<li>队列也是元素的集合，包括两个基本操作：<code>enqueue</code>将元素插入队列，<code>dequeue</code>将元素从队列中移除。</li>
+<li>遵循先入先出的原则（FIFO），这里呢，可以这样理解 栈就像一个瓶子，队列呢 就像一根管子。</li>
+<li>时间复杂度<ul>
+<li>索引<code>O(n)</code></li>
+<li>搜索<code>O(n)</code></li>
+<li>插入<code>O(1)</code></li>
+<li>移除<code>O(1)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><ul>
+<li>树势无向，连同的无限图</li>
+</ul>
+<h3 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h3><ul>
+<li>二叉树是每个节点最多包含左子节点和右子节点的树形数据结构</li>
+<li><strong>满二叉树：</strong>树中每个节点最多包含0个或2个节点</li>
+<li><strong>完全二叉树：</strong>除最后一层外，每一层上的结点数均达到最大值；在最后一层上只缺少右边的若干结点。</li>
+</ul>
+<h3 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h3><ul>
+<li>二叉搜索树（BST）是一种特殊的二叉树，其任何节点中的值都会大于或者等于其左子树中存储的值并且小于或者等于其右子树中存储的值。</li>
+<li>时间复杂度:<ul>
+<li>索引: <code>O(log(n))</code>    </li>
+<li>搜索: <code>O(log(n))</code></li>
+<li>插入: <code>O(log(n))</code></li>
+<li>删除: <code>O(log(n))</code></li>
+</ul>
+</li>
+</ul>
+<p><img src="http://www.bysocket.com/wp-content/uploads/2016/07/3.png" alt=""></p>
+<h3 id="Trie"><a href="#Trie" class="headerlink" title="Trie"></a>Trie</h3><p>字典树它有3个基本性质：</p>
+<ul>
+<li>根节点不包含字符，除根节点外每一个节点都只包含一个字符。</li>
+<li>从根节点到某一节点，路径上经过的字符连接起来，为该节点对应的字符串。</li>
+<li>每个节点的所有子节点包含的字符都不相同</li>
+</ul>
+<p>即如果现在有b，abc，abd，bcd，abcd，efg，hii 这6个单词，我们可以构建一棵如下图所示的树：</p>
+<p><img src="https://github.com/julycoding/The-Art-Of-Programming-By-July/raw/master/ebook/images/8/8.4/1.jpg" alt=""></p>
+<p>未完待续。。。。。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/03/20/algorithm/"
+        data-url="https://lennyup.github.io/2017/03/20/algorithm/"
+        data-title="算法——初篇" id="ds-thread">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/04/14/cardview-first/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/16/rxjava-retrofit/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

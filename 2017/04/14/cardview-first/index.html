@@ -10,7 +10,7 @@
     
     <title>
         
-            归档: 2017 | 
+            Materal Design 之 CardView | 
         
         lennyup&#39;s Notes
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lennyup.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017 | lennyup&#39;s Notes">
+    <meta property="og:title" content="Materal Design 之 CardView | lennyup&#39;s Notes">
     <meta property="og:description" content="不得了">
     
 
@@ -216,352 +216,298 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#源码解读"><span class="post-toc-number">1.</span> <span class="post-toc-text">源码解读</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性和方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">属性和方法</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/14/cardview-first/">Materal Design 之 CardView</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近看一些大佬的自定义view，其中用到了CardView，感觉好高大上，赶紧去恶补一下。（我默默的打开了源码）
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/14/cardview-first/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/14/cardview-first/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/20/algorithm/">算法——初篇</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            作为一个经常在算法课上逃课的孩子，写这个有些尴尬，因为算法真的是太枯燥了，但是作为一个程序员，算法还是一定要会的（ps：许多大公司面试的时候特爱考）...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/20/algorithm/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/20/algorithm/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/16/rxjava-retrofit/">初识rxjava（二）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            上一篇，简单的认识了最近火爆异常的RxJava,如果你对RxJava还是很陌生，你可以去网上找一下相关知识，当然也可以看我的上一篇文章
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/16/rxjava-retrofit/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/16/rxjava-retrofit/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/14/rxjava-first/">初识RxJava</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            自打进入公司以来，一直用的是React Native，以及 React + WebView的结构来写代码，对原生的一些知识学习落后了许多。老是听朋友...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/14/rxjava-first/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/14/rxjava-first/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/03/11/hexo-github/">HEXO+Github,搭建自己的个人博客</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            我将这篇文章，作为我的第一篇文章，是为了记录下来自己搭建这个博客的点滴（ps: 方便回忆）。前几天，看见同事在弄这个，于是乎，自己也搭一个玩...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/03/11/hexo-github/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>3月 11, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/03/11/hexo-github/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Materal Design 之 CardView
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>lennyup</strong>
+        <span>4月 14, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/04/14/cardview-first/" class="leancloud-views_num" data-flag-title="Materal Design 之 CardView">
+     &nbsp;阅读量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        阅读量&nbsp;<span id="busuanzi_value_page_pv"></span>
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Materal Design 之 CardView&url=https://lennyup.github.io//2017/04/14/cardview-first/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Materal Design 之 CardView&url=https://lennyup.github.io//2017/04/14/cardview-first/index.html&via=lennyup" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/04/14/cardview-first/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/04/14/cardview-first/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>最近看一些大佬的自定义view，其中用到了<code>CardView</code>，感觉好高大上，赶紧去恶补一下。（我默默的打开了源码）</p>
+<h3 id="源码解读"><a href="#源码解读" class="headerlink" title="源码解读"></a>源码解读</h3><p>首先在刚开始有这么一句话<br><code>A FrameLayout with a rounded corner background and shadow.</code></p>
+<p><code>CardView</code>是一个带圆角、带阴影效果的<code>FrameLayout</code>（原来如此）</p>
+<p>接下来第二句</p>
+<p><code>CardView uses &lt;code&gt;elevation&lt;/code&gt; property on Lollipop for shadows and falls back to a custom emulated shadow implementation on older platforms.</code></p>
+<p>它是使用的 <code>elevation</code>这个属性来控制阴影效果的大小，成正比的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app:cardElevation=&quot;2dp&quot;</div></pre></td></tr></table></figure>
+<p><code>Due to expensive nature of rounded corner clipping, on platforms before Lollipop, CardView does
+ not clip its children that intersect with rounded corners. Instead, it adds padding to avoid such
+ intersection (See {@link #setPreventCornerOverlap(boolean)} to change this behavior).</code></p>
+<p> 在5.0版本之前圆角的裁剪是比较麻烦的，所以 CardView不会裁剪那些和圆角相关的子空间。但是用一种方法避免了这样的交集，那就是 padding（可以去看setPreventCornerOverlap(boolean) 来改变这些行为）</p>
+<p><code>Before Lollipop, CardView adds padding to its content and draws shadows to that area. This
+ padding amount is equal to &lt;code&gt;maxCardElevation + (1 - cos45) * cornerRadius&lt;/code&gt; on the
+sides and &lt;code&gt;maxCardElevation * 1.5 + (1 - cos45) * cornerRadius&lt;/code&gt; on top and bottom.</code></p>
+<p> 在5.0之前，<code>CardView</code>为其显示的内容以及阴影效果增加了padding。在<code>sides</code>处padding值等于<code>maxCardElevation + (1 - cos45) * cornerRadius</code>, 在<code>top</code>和<code>bottom</code>处等于<code>maxCardElevation * 1.5 + (1 - cos45) * cornerRadius</code></p>
+<p><code>Since padding is used to offset content for shadows, you cannot set padding on CardView.
+ Instead, you can use content padding attributes in XML or
+ {@link #setContentPadding(int, int, int, int)} in code to set the padding between the edges of
+ the CardView and children of CardView.</code></p>
+<p>padding是用来抵消阴影的，你不能在<code>CardView</code>上设置<code>padding</code>。你可以用 content padding属性或者在代码中通过<code>setContentPadding(int, int, int, int)</code>来设置Card和CardView的子控件之间的padding；</p>
+<p><code>Note that, if you specify exact dimensions for the CardView, because of the shadows, its content
+area will be different between platforms before Lollipop and after Lollipop. By using api version
+specific resource values, you can avoid these changes. Alternatively, If you want CardView to add
+ inner padding on platforms Lollipop and after as well, you can call
+ {@link #setUseCompatPadding(boolean)} and pass &lt;code&gt;true&lt;/code&gt;.</code></p>
+<p> 如果你给<code>CardView</code>设置了精确的尺寸，由于阴影效果，在Android L之前和Android L之后的版本中，<code>CardView</code>中显示的<code>content</code>是有区别的。通过使用API版本的特定值，可以避免这些改变。如果你想更好的设置<code>CardView</code>的内边距在Android L和之后的版本，你可以设置<code>setUseCompatPadding(boolean)为true</code></p>
+<p> <code>To change CardView&#39;s elevation in a backward compatible way, use {@link #setCardElevation(float)}. CardView will use elevation API on Lollipop and before
+ Lollipop, it will change the shadow size. To avoid moving the View while shadow size is changing,
+ shadow size is clamped by {@link #getMaxCardElevation()}. If you want to change elevation
+dynamically, you should call {@link #setMaxCardElevation(float)} when CardView is initialized.</code></p>
+<p>修改<code>CardView</code>的<code>elevation</code>属性通过使用<code>setCardElevation(float)</code>。<code>CardView</code>将使用<code>elevation</code>在Android L和之前的版本，它将修改这个阴影的size。为了避免当shadow size改变的时候View的移动，shadow size不能大于<code>getMaxCardElevation()</code>。如果你想动态的修改elevation，你可以调用<code>setMaxCardElevation(float)</code>方法当CardView别初始化的时候。</p>
+<h3 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">app:cardBackgroundColor=&quot;#ffffff&quot;  </div><div class="line">cardView.setCardBackgroundColor(int);//设置CardView的background的颜色  </div><div class="line">  </div><div class="line">app:cardCornerRadius=&quot;5dp&quot;  </div><div class="line">cardView.setRadius(float);//设置CardView的圆角半径  </div><div class="line">  </div><div class="line">app:cardElevation=&quot;2sp&quot;  </div><div class="line">cardView.setMaxCardElevation(float)//设置CardView的elevation（阴影，值越大，阴影效果越强）  </div><div class="line">  </div><div class="line">app:cardMaxElevation=&quot;2sp&quot;//设置CardView的最大Elevation  </div><div class="line">  </div><div class="line">app:cardPreventCornerOverlap=&quot;true|false&quot;  </div><div class="line">cardView.setPreventCornerOverlap(boolean);//在Android5.0以前的版本上防止子控件和CardView的圆角之间的重叠交接  </div><div class="line">  </div><div class="line">app:cardUseCompatPadding=&quot;true|false&quot;  </div><div class="line">cardView.setUseCompatPaddin(boolean);//在Android5.0和以上版本添加padding让其和之前的版本有相同的测量形式  </div><div class="line">  </div><div class="line">app:contentPadding=&quot;&quot;  </div><div class="line">cardView.setContentPadding(int,int,int,int);//设置Card边缘和CardView的子控件之间的内边距  </div><div class="line">  </div><div class="line">app:contentPaddingTop=&quot;&quot;  </div><div class="line">app:contentPaddingBottom=&quot;&quot;  </div><div class="line">app:contentPaddingLeft=&quot;&quot;  </div><div class="line">app:contentPaddingRight=&quot;&quot;</div></pre></td></tr></table></figure>
+<p>至于具体的代码我这里就不贴了，很简单的，可以自己去试试（实践出真知）。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/04/14/cardview-first/"
+        data-url="https://lennyup.github.io/2017/04/14/cardview-first/"
+        data-title="Materal Design 之 CardView" id="ds-thread">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/03/20/algorithm/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
