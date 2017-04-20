@@ -10,7 +10,7 @@
     
     <title>
         
-            归档: 2017/4 | 
+            浅析builder模式 | 
         
         lennyup&#39;s Notes
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lennyup.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/4 | lennyup&#39;s Notes">
+    <meta property="og:title" content="浅析builder模式 | lennyup&#39;s Notes">
     <meta property="og:description" content="不得了">
     
 
@@ -216,163 +216,292 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义"><span class="post-toc-number">2.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Builder模式"><span class="post-toc-number">3.</span> <span class="post-toc-text">Builder模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用场景"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用场景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">5.</span> <span class="post-toc-text">总结</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/20/android-builder/">浅析builder模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言其实，我很早就...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/20/android-builder/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/20/android-builder/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/14/cardview-first/">Materal Design 之 CardView</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近看一些大佬的自定义view，其中用到了CardView，感觉好高大上，赶紧去恶补一下。（我默默的打开了源码）
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/14/cardview-first/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/14/cardview-first/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                浅析builder模式
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>lennyup</strong>
+        <span>4月 20, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/04/20/android-builder/" class="leancloud-views_num" data-flag-title="浅析builder模式">
+     &nbsp;阅读量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        阅读量&nbsp;<span id="busuanzi_value_page_pv"></span>
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=浅析builder模式&url=https://lennyup.github.io//2017/04/20/android-builder/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=浅析builder模式&url=https://lennyup.github.io//2017/04/20/android-builder/index.html&via=lennyup" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/04/20/android-builder/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/04/20/android-builder/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>其实，我很早就想总结一下自己多熟悉的设计模式，一直找不到合适的切入点来写。最近看到 <code>AlertDialog</code>,心想这不就是一个活生生的<code>Builder</code>模式的例子吗，于是乎，我赶紧敲了敲自己昏昏欲睡的脑袋，<br>抓住自己呼之欲出的灵感，奋笔疾书！</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>建造者模式: 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
+<p>举个栗子：大学生去食堂打饭，可以选四菜一汤，菜系任意选，那么打饭的这个过程 和他出来的不同搭配 就需要进行分离。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AlertDialog.Builder builder=new </div><div class="line">                AlertDialog.Builder(this)</div><div class="line">                .setTitle(&quot;My Dialog&quot;)</div><div class="line">                .setMessage(&quot;This is Test Dialog&quot;)</div><div class="line">                .setIcon(R.drawable.icon);</div><div class="line">        AlertDialog dialog=builder.create();</div></pre></td></tr></table></figure>
+<p>如上面的代码，我们不是通过 new 的方式来直接创建一个对象。而是通过其Builder 来配置，然后再<code>create</code>出来。</p>
+<h3 id="Builder模式"><a href="#Builder模式" class="headerlink" title="Builder模式"></a>Builder模式</h3><p>下面我们通过看<code>AlertDialog</code> 的源码来解析下 <code>Builder</code> 模式，<br>先来看下它的构造方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected AlertDialog(Context context) &#123;</div><div class="line">     super((Context)null, false, (OnCancelListener)null);</div><div class="line">     throw new RuntimeException(&quot;Stub!&quot;);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>可以看出来，方法的修饰是<code>protected</code> ,也就是说除了它的子类之外，其他类无法访问这个方法，所以这就不能直接创建<code>AlertDialog</code>的实例了，只能通过<code>Builder</code>的方式。</p>
+<p>我们来看下<code>Builder</code>的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">        public static class Builder &#123;</div><div class="line">        private final AlertController.AlertParams P;</div><div class="line"></div><div class="line">        public Builder(@NonNull Context context) &#123;</div><div class="line">            this(context, resolveDialogTheme(context, 0));</div><div class="line">        &#125;</div><div class="line">...</div><div class="line">        public Builder setTitle(@Nullable CharSequence title) &#123;</div><div class="line">            P.mTitle = title;</div><div class="line">            return this;</div><div class="line">        &#125;</div><div class="line">        public Builder setMessage(@Nullable CharSequence message) &#123;</div><div class="line">            P.mMessage = message;</div><div class="line">            return this;</div><div class="line">        &#125;</div><div class="line">        public Builder setIcon(@DrawableRes int iconId) &#123;</div><div class="line">            P.mIconId = iconId;</div><div class="line">            return this;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    .....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这里只是其中的一部分，具体的可以去阅读下它的源码，在这里可以看出，<code>Builder</code>是<code>AlertDialog</code>的一个静态内部类，这里就列出了三个方法<br>用于分别设置其信息，标题和图标。这里的重点在于没个方法的返回值都是其自身。这样可以便利的设置自己的配置，也切法呦逻辑感。</p>
+<p>来看下 <code>create</code>方法的实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public AlertDialog create() &#123;</div><div class="line">     // Context has already been wrapped with the appropriate theme.</div><div class="line">     final AlertDialog dialog = new AlertDialog(P.mContext, 0, false);</div><div class="line">     P.apply(dialog.mAlert);</div><div class="line">     dialog.setCancelable(P.mCancelable);</div><div class="line">     if (P.mCancelable) &#123;</div><div class="line">         dialog.setCanceledOnTouchOutside(true);</div><div class="line">     &#125;</div><div class="line">     dialog.setOnCancelListener(P.mOnCancelListener);</div><div class="line">     dialog.setOnDismissListener(P.mOnDismissListener);</div><div class="line">     if (P.mOnKeyListener != null) &#123;</div><div class="line">         dialog.setOnKeyListener(P.mOnKeyListener);</div><div class="line">     &#125;</div><div class="line">     return dialog;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>最后，通过我们之前的配置，关联到我们现在创建的这个实例上来。完成创建。</p>
+<p>还有其他的地方也用到了了<code>Builder</code>模式，比如说 OkHttp里的<code>Request.Builder</code>.</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
+<li><p>当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。</p>
+</li>
+<li><p>当构造过程必须允许被构造的对象有不同的表示时。</p>
+</li>
+<li><p>Builder模式要解决的也正是这样的问题：</p>
+</li>
+</ul>
+<p>　　- 当我们要创建的对象很复杂的时候（通常是由很多其他的对象组合而成），</p>
+<p>　　- 我们要复杂对象的创建过程和这个对象的表示（展示）分离开来，<br>这样做的好处就是通过一步步的进行复杂对象的构建，</p>
+<p>　　- 由于在每一步的构造过程中可以引入参数，使得经过相同的步骤创建最后得到的对象的展示不一样。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这里只是简单的从 Android的角度去分析<code>Builder</code>模式，简化了很多，<code>Builder</code>模式的使用并不会使我们的代码运行速度加快。设计模式总的来说就是对是封装、继承、多态和关联的反复使用；是一种编程技巧，让我们能写出高质量代码的技巧。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/04/20/android-builder/"
+        data-url="https://lennyup.github.io/2017/04/20/android-builder/"
+        data-title="浅析builder模式" id="ds-thread">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/14/cardview-first/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
