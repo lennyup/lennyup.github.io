@@ -10,7 +10,7 @@
     
     <title>
         
-            初识RxJava | 
+            消息传递机制之EventBus | 
         
         lennyup&#39;s Notes
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lennyup.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="初识RxJava | lennyup&#39;s Notes">
+    <meta property="og:title" content="消息传递机制之EventBus | lennyup&#39;s Notes">
     <meta property="og:description" content="不得了">
     
 
@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RxJava是什么"><span class="post-toc-number">1.</span> <span class="post-toc-text">RxJava是什么</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#API介绍"><span class="post-toc-number">2.</span> <span class="post-toc-text">API介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#观察者模式"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">观察者模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RxJava的观察者模式"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">RxJava的观察者模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程控制"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">线程控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Scheduler的API"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">Scheduler的API</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">3.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用EventBus的三个步骤"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用EventBus的三个步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定义事件"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">定义事件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#准备订阅者"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">准备订阅者</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#注册订阅以及取消订阅"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">注册订阅以及取消订阅</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#发布事件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">发布事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换线程"><span class="post-toc-number">2.</span> <span class="post-toc-text">切换线程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#POSTING"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">POSTING</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MAIN"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">MAIN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#BACKGROUND"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">BACKGROUND</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ASYNC"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">ASYNC</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EventBusBuilder配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">EventBusBuilder配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#StickyEvent"><span class="post-toc-number">4.</span> <span class="post-toc-text">StickyEvent</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#清除粘性事件"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">清除粘性事件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#优先事项和事件取消"><span class="post-toc-number">5.</span> <span class="post-toc-text">优先事项和事件取消</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用户优先级"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">用户优先级</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#取消事件传递"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">取消事件传递</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户索引"><span class="post-toc-number">6.</span> <span class="post-toc-text">用户索引</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#混淆"><span class="post-toc-number">7.</span> <span class="post-toc-text">混淆</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -278,7 +278,7 @@
         
     
             <p class="article-headline-p">
-                初识RxJava
+                消息传递机制之EventBus
             </p>
         </div>
 
@@ -297,7 +297,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>lennyup</strong>
-        <span>3月 14, 2017</span>
+        <span>5月 05, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -335,7 +335,7 @@
     <!-- Leancloud Views -->
         <a class="post_share-link" href="#">
             <li class="mdl-menu__item">
-                <span id="/2017/03/14/rxjava-first/" class="leancloud-views_num" data-flag-title="初识RxJava">
+                <span id="/2017/05/05/eventbus-first/" class="leancloud-views_num" data-flag-title="消息传递机制之EventBus">
      &nbsp;阅读量
 </span>
 
@@ -358,7 +358,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=初识RxJava&url=https://lennyup.github.io//2017/03/14/rxjava-first/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=消息传递机制之EventBus&url=https://lennyup.github.io//2017/05/05/eventbus-first/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -367,7 +367,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=初识RxJava&url=https://lennyup.github.io//2017/03/14/rxjava-first/index.html&via=lennyup" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=消息传递机制之EventBus&url=https://lennyup.github.io//2017/05/05/eventbus-first/index.html&via=lennyup" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -376,7 +376,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/03/14/rxjava-first/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/05/05/eventbus-first/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -385,7 +385,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/03/14/rxjava-first/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/05/05/eventbus-first/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -409,81 +409,44 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>自打进入公司以来，一直用的是React Native，以及 React + WebView的结构来写代码，对原生的一些知识学习落后了许多。老是听朋友说什么 RxJava，一脸懵逼。现在，趁闲暇之时，补充下Android知识，在这里简单说下对RxJava的理解。</p>
-<p>在开始之前呢，先要说下其github以及要依赖的包，由于现在 RxJava2已经有了一段时间了，但是对于小白的我来说，还是先从1开始吧。</p>
-<p>GitHub:</p>
-<p><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">https://github.com/ReactiveX/RxJava</a><br><a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">https://github.com/ReactiveX/RxAndroid</a></p>
-<p>引入的依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">compile &apos;io.reactivex:rxjava:1.2.7&apos;</div><div class="line">compile &apos;io.reactivex:rxandroid:1.2.1&apos;</div></pre></td></tr></table></figure>
-<h2 id="RxJava是什么"><a href="#RxJava是什么" class="headerlink" title="RxJava是什么"></a>RxJava是什么</h2><p>相信所有初学者应该和我一样，对于这个很陌生，我们看下github上对其介绍：<code>RxJava – Reactive Extensions for the JVM – a library for composing asynchronous and event-based programs using observable sequences for the Java VM.</code><br>(大概意思是说 这是一个在VM上使用可观察的序列来组成异步、基于事件的库)</p>
-<p>这里我们就可以总结的说 RxJava是一个实现异步操作的类。异步实现 ？那我们之前也写过很多呀 像 AsyncTask / Handler / XXX / …<br>那为什么现在大家都在用 RxJava呢 ？带着疑问我们来简单说下它的一些用法。</p>
-<h2 id="API介绍"><a href="#API介绍" class="headerlink" title="API介绍"></a>API介绍</h2><p>首先，RxJava的异步实现是通过观察者模式实现的。</p>
-<h3 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h3><p>观察者模式是这样的：A 对象（观察者）对 B 对象（被观察者）的某种变化高度敏感，需要在 B 变化的一瞬间做出反应。举个开发中的例子就是点击监听器<code>OnClickListener</code>,程序中的观察者是采用注册(Register)或者是订阅(Subscribe)的关系来告诉被观察者的。<br>OnClickListener的模式大致如图：<br><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rx42h1wgj20fz03rglt.jpg" alt=""><br>当<code>Button</code>被点击之后，会通过<code>setOnClickListener</code>方法中的<code>OnClick</code>来通知器点击状态的。<br>那么转换成观察者模式就是这样<br><img src="http://ww3.sinaimg.cn/mw1024/52eb2279jw1f2rx4446ldj20ga03p74h.jpg" alt=""></p>
-<h3 id="RxJava的观察者模式"><a href="#RxJava的观察者模式" class="headerlink" title="RxJava的观察者模式"></a>RxJava的观察者模式</h3><p>RxJava有这几个概念：<code>Observable</code>(被观察者)、<code>Observer</code>(观察者)、<code>subscribe</code>订阅、事件。<code>Observer</code>和<code>Observable</code>通过<code>subscribe</code>来实现订阅关系。<code>Observable</code>需要的时候通过<code>subscribe</code>来通知<code>Observer</code>。</p>
-<p>RxJava的回调事件有三个：</p>
-<ul>
-<li><code>onNext</code>: 相当于<code>OnClickListener</code>中的<code>OnClick</code>;</li>
-<li><code>onError</code>:事件队列异常。与下面的<code>onCompleted</code>互斥。</li>
-<li><code>onCompleted</code>：事件队列完成。当不会再有<code>onNext</code>发出时，会触发<code>onCompleted</code></li>
-</ul>
-<p>###基本实现<br>(1) Observer</p>
-<p>观察者，决定触发时执行的动作。实现方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Observer&lt;String&gt; observer = new Observer&lt;String&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void onCompleted() &#123;</div><div class="line">                Log.w(TAG, &quot;Observer onCompleted&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onError(Throwable e) &#123;</div><div class="line">                Log.w(TAG, &quot;Observer onError&quot;);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onNext(String s) &#123;</div><div class="line">                Log.w(TAG, &quot;Item &quot; + s);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
-<p>此外，还有一种Observer的实现方式 <code>Subscriber</code>,它是observer的一个扩展抽象类。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Subscriber&lt;String&gt; subscriber = new Subscriber&lt;String&gt;() &#123;</div><div class="line">            @Override</div><div class="line">            public void onCompleted() &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onError(Throwable e) &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onNext(String s) &#123;</div><div class="line"></div><div class="line">            &#125;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void onStart() &#123;</div><div class="line">                super.onStart();</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;;</div></pre></td></tr></table></figure>
-<p><code>subscriber</code>比<code>observer</code>多几个方法。这里只说其中的两个：</p>
-<ul>
-<li><code>onStart()</code>它会在 subscribe 刚开始，而事件还未发送之前被调用，可以用于做一些准备工作，例如数据的清零或重置。如果所要做的操作对于线程有要求，那么这个方法就不适合了。</li>
-<li><code>unsubscribe()</code>用于取消订阅，可以通过<code>isUnsubscribed()</code>来判断下状态。 </li>
-</ul>
-<p>(2) Observable</p>
-<p>被观察者，决定什么时候触发以及触发什么事件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Observable observable = Observable.create(new Observable.OnSubscribe&lt;String&gt;()&#123;</div><div class="line"></div><div class="line">            @Override</div><div class="line">            public void call(Subscriber&lt;? super String&gt; subscriber) &#123;</div><div class="line">                observer.onNext(&quot;Hi&quot;);</div><div class="line">                observer.onNext(&quot;who are you&quot;);</div><div class="line">                observer.onNext(&quot;I am Li&quot;);</div><div class="line">                observer.onCompleted();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
-<p>(ps: 现在这种方式已经被废弃了)</p>
-<p>还有另几种创建方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Observable observable = Observable.just(&quot;Hi&quot;, &quot;Who are you&quot;, &quot;I am Li&quot;);</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String [] s = &#123;&quot;Hi&quot;, &quot;who are you&quot;, &quot;I am Li&quot;&#125;;</div><div class="line">Observable observable1 = Observable.from(s);</div></pre></td></tr></table></figure>
-<p>(3) Subscribe (订阅)<br>将<code>Observable</code>和<code>Observer</code>关联起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">observable.subscribe(observer);</div></pre></td></tr></table></figure>
-<h3 id="线程控制"><a href="#线程控制" class="headerlink" title="线程控制"></a>线程控制</h3><p>你会了上边的那些步骤，并不代表你已经入门了，以为RxJavaz最主要的概念是<code>异步</code>,这样就引出了我们要说的线程控制——Scheduler，比如说我们加载图片，然后显示在屏幕上。这就需要Scheduler了。</p>
-<h4 id="Scheduler的API"><a href="#Scheduler的API" class="headerlink" title="Scheduler的API"></a>Scheduler的API</h4><p>在不指定线程的情况下，RxJava是不会改变线程的。在RxJava中， Scheduler相当于线程控制器，用来指定每段代码多运行在什么样的线程上。来看下它适合哪些场景：</p>
-<ul>
-<li><code>Schedulers.immediate()</code>: 默认的，直接运行在当前线程。</li>
-<li><code>Schedulers.newThread()</code>: 新线程。</li>
-<li><code>Schedulers.io()</code>: I/O线程（读写文件、读写数据库、网络信息交互）</li>
-<li><code>Schedulers.computation()</code>：CPU密集型计算所使用的线程。</li>
-<li><code>AndroidSchedulers.mainThread()</code>: 主线程。</li>
-</ul>
-<p>对线程控制的话，通过<code>subscribeOn()</code>和<code>observeOn()</code>这两个方法</p>
-<ul>
-<li><code>subscribeOn</code>: 指定<code>subscribe</code>所发生的线程。即事件发生的线程。</li>
-<li><code>observeOn</code>：事件消费线程，<code>Subscriber</code>所运行在的线程。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">Observable.just(1,2,3,4)</div><div class="line">                .map(new Func1&lt;Integer, String&gt;() &#123;</div><div class="line">                    @Override</div><div class="line">                    public String call(Integer integer) &#123;</div><div class="line">                        return &quot;&quot; + integer;</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .subscribe(new Action1&lt;String&gt;() &#123;</div><div class="line">                    @Override</div><div class="line">                    public void call(String s) &#123;</div><div class="line">                        Log.w(TAG, s);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div></pre></td></tr></table></figure>
-<p>相信有js经验的人会对 <code>.map</code>这种形式比较熟悉，这里的<code>.map</code>会使每个int 转换成string对象返回。这里又引出了另一个类<code>Func1</code>，<code>FuncX</code>和<code>ActionX</code>的区别在于是否有返回值，X代表是几个参数。</p>
-<ul>
-<li><code>map()</code>事件对象直接对换。示意图如下：</li>
-</ul>
-<p><img src="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4fitvfj20hw0ea0tg.jpg" alt=""></p>
-<p>这里引出一个比较难理解的方法<code>flatMap()</code>，先来看一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">Student[] students = ...;</div><div class="line">Subscriber&lt;Course&gt; subscriber = new Subscriber&lt;Course&gt;() &#123;</div><div class="line">    @Override</div><div class="line">    public void onNext(Course course) &#123;</div><div class="line">        Log.d(TAG, course.getName());</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">&#125;;</div><div class="line">Observable.from(students)</div><div class="line">    .flatMap(new Func1&lt;Student, Observable&lt;Course&gt;&gt;() &#123;</div><div class="line">        @Override</div><div class="line">        public Observable&lt;Course&gt; call(Student student) &#123;</div><div class="line">            return Observable.from(student.getCourses());</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">    .subscribe(subscriber);</div></pre></td></tr></table></figure>
-<p>从这个例子中可以看出，<code>flatMap</code>和<code>map</code>一样，都使一个对象转换成另一个对象，但是仔细看会发现，<code>flatMap</code> 返回的是一个 Observable 对象，并且并不是直接放到Subsciber的回调里。</p>
-<p><code>flatMap()</code> 的原理是这样的：</p>
-<ol>
-<li>使用传入的事件对象创建一个 <code>Observable</code>对象；</li>
-<li>并不发送这个 <code>Observable</code>, 而是将它激活，于是它开始发送事件;</li>
-<li>每一个创建出来的 <code>Observable</code> 发送的事件，都被汇入同一个 <code>Observable</code>，而这个 <code>Observable</code> 负责将这些事件统一交给 <code>Subscriber</code> 的回调方法。</li>
-</ol>
-<p>这三个步骤，把事件拆成了两级，通过一组新创建的<code>Observable</code> 将初始的对象『铺平』之后通过统一路径分发了下去。而这个『铺平』就是 <code>flatMap()</code> 所谓的 <code>flat</code>。</p>
-<p><code>flatMap()</code>示意图：<br><img src="http://ww1.sinaimg.cn/mw1024/52eb2279jw1f2rx4i8da2j20hg0dydgx.jpg" alt="图片来自网络"></p>
-<p><code>flatMap()</code>常用于嵌套的异步操作中</p>
-<p>其实还有很多其他的变换方式，这里就不一一说了，他们的共同点在于对世间序列的封装处理和再发送。在RxJava内部，它们都基于一个方法：<code>lift()</code></p>
-<p>前面说到，利用<code>subscribeOn</code>和<code>observeOn</code>来实现线程控制，让事件的产生和消费在不同的线程中。那么，能否多次切换线程呢。答案是可以的。我们通过图开说下两者的原理</p>
-<p><code>subscribeOn()</code> 原理图：<br><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rxcynbsuj20ha0d7wg2.jpg" alt=""></p>
-<p><code>observeOn()</code> 原理图：<br><img src="http://ww4.sinaimg.cn/mw1024/52eb2279jw1f2rxd05lttj20hj0cyabl.jpg" alt=""></p>
-<p>从图中可以看出两者线程切换的不同。<code>subscribeOn()</code> 的线程切换发生在 <code>OnSubscribe</code> 中，即在它通知上一级 <code>OnSubscribe</code> 时，这时事件还没有开始发送，因此 <code>subscribeOn()</code> 的线程控制可以从事件发出的开端就造成影响；而 <code>observeOn()</code> 的线程切换则发生在它内建的 <code>Subscriber</code> 中，即发生在它即将给下一级 <code>Subscriber</code> 发送事件时，因此 <code>observeOn()</code> 控制的是它后面的线程。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>由于了解的比较晚，所以只能浅显的说下它的基本用法和原理。现在来说，开源的时代已经来了，所以没事的话，可以多看看其源码。<br>（ps: atlas刚昨天开源，有兴趣的可以去看看 <a href="http://atlas.taobao.org/docs/" target="_blank" rel="external">atlas</a>）</p>
-
+        <p>每天进步一点，没准哪天自己也会成为大佬呢。</p>
+<p>现在，我开始研究最近特别火的消息传递机制<code>EventBus</code>.以前，对于<code>activity</code>和<code>fragment</code>之间的通信可以用接口回调的方式实现，使用起来会略有些麻烦。现在可以用<code>EventBus</code>，好用简单。</p>
+<p>官方说明是这样定义的：<code>EventBus</code>是针对<code>Android</code>的发布／订阅事件总线。轻松实现各个组件之间的传递消息，可读性高，耦合度低。下面以<code>3.0</code>为例，学习和记录下其使用。</p>
+<h3 id="使用EventBus的三个步骤"><a href="#使用EventBus的三个步骤" class="headerlink" title="使用EventBus的三个步骤"></a>使用EventBus的三个步骤</h3><h4 id="定义事件"><a href="#定义事件" class="headerlink" title="定义事件"></a>定义事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class MessageEvent &#123;</div><div class="line">    public final String message;</div><div class="line"></div><div class="line">    public MessageEvent(String message) &#123;</div><div class="line">        this.message = message;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="准备订阅者"><a href="#准备订阅者" class="headerlink" title="准备订阅者"></a>准备订阅者</h4><p>订阅者实现事件处理方法，在事件发布时被调用。被调用的方法要用<code>@Subscribe</code>注释。<br>（在3.0 中可以自由选择方法名）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@Subscribe(threadMode = ThreadMode.MAIN)</div><div class="line"> public void freshed(utils.MessageEvent messageEvent) &#123;</div><div class="line">     Log.d(&quot;MainActivity&quot;, &quot;_------------------MainActivity&quot;);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h5 id="注册订阅以及取消订阅"><a href="#注册订阅以及取消订阅" class="headerlink" title="注册订阅以及取消订阅"></a>注册订阅以及取消订阅</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onStart() &#123;</div><div class="line">    super.onStart();</div><div class="line">    EventBus.getDefault().register(this);</div><div class="line">&#125;</div><div class="line"> </div><div class="line">@Override</div><div class="line">public void onStop() &#123;</div><div class="line">    EventBus.getDefault().unregister(this);</div><div class="line">    super.onStop();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>官方上是在<code>onStop</code>中取消订阅，个人建议在<code>onDestroy</code>中。</p>
+<h4 id="发布事件"><a href="#发布事件" class="headerlink" title="发布事件"></a>发布事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EventBus.getDefault().post(new MessageEvent(&quot;Hello!&quot;));</div></pre></td></tr></table></figure>
+<h3 id="切换线程"><a href="#切换线程" class="headerlink" title="切换线程"></a>切换线程</h3><p><code>EventBus</code>可以简单的实现线程间的切换，其中包括后台线程、主线程（UI线程）、异步线程。</p>
+<h4 id="POSTING"><a href="#POSTING" class="headerlink" title="POSTING"></a>POSTING</h4><p>默认调用方式，在调用post方法的线程执行，避免了线程切换，性能开销最少   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// Called in the same thread (default)</div><div class="line">// ThreadMode is optional here</div><div class="line">@Subscribe(threadMode = ThreadMode.POSTING)</div><div class="line">public void onMessage(MessageEvent event) &#123;</div><div class="line">    log(event.message);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="MAIN"><a href="#MAIN" class="headerlink" title="MAIN"></a>MAIN</h4><p> 主线程（UI线程）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// Called in Android UI&apos;s main thread</div><div class="line">@Subscribe(threadMode = ThreadMode.MAIN)</div><div class="line">public void onMessage(MessageEvent event) &#123;</div><div class="line">textField.setText(event.message);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="BACKGROUND"><a href="#BACKGROUND" class="headerlink" title="BACKGROUND"></a>BACKGROUND</h4><p>后台线程。这个会分两种情况：如果post的线程不是主线程，就在当前线程中调用。如果是主线程， EventBus 就会使用一个单独的后台线程来顺序发送所有的事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// Called in the background thread</div><div class="line">@Subscribe(threadMode = ThreadMode.BACKGROUND)</div><div class="line">public void onMessage(MessageEvent event)&#123;</div><div class="line">    saveToDisk(event.message);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="ASYNC"><a href="#ASYNC" class="headerlink" title="ASYNC"></a>ASYNC</h4><p>异步线程，通常用来执行比较耗时的操作，比如网络请求<br>EventBus内部使用了线程池，但是要尽量避免大量长时间运行的异步线程，限制并发线程数量可以通过EventBusBuilder修改，默认使用Executors.newCachedThreadPool()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// Called in a separate thread</div><div class="line">@Subscribe(threadMode = ThreadMode.ASYNC)</div><div class="line">public void onMessage(MessageEvent event)&#123;</div><div class="line">    backend.send(event.message);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="EventBusBuilder配置"><a href="#EventBusBuilder配置" class="headerlink" title="EventBusBuilder配置"></a>EventBusBuilder配置</h3><p>EventBus提供了许多配置，方便我们实现不同的需求。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">EventBus eventBus = new EventBus();</div><div class="line">    //下面这一条的效果是完全一样的</div><div class="line">    EventBus eventBus = EventBus.builder().build();</div><div class="line">    //修改默认实现的配置，记住，必须在第一次EventBus.getDefault()之前配置，且只能设置一次。建议在application.onCreate()调用</div><div class="line">    EventBus.builder().throwSubscriberException(BuildConfig.DEBUG).installDefaultEventBus();</div></pre></td></tr></table></figure>
+<h3 id="StickyEvent"><a href="#StickyEvent" class="headerlink" title="StickyEvent"></a>StickyEvent</h3><p>粘性事件类似粘性广告，就是一次注册永久使用的那种。<br>使用的方式是：发送时采用postSticky</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EventBus.getDefault().postSticky(new MessageEvent(&quot;Hello everyone!&quot;));</div></pre></td></tr></table></figure>
+<p>接受时添加一个sticky = true </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// UI updates must run on MainThread</div><div class="line">@Subscribe(sticky = true, threadMode = ThreadMode.MAIN)</div><div class="line">public void onEvent(MessageEvent event) &#123;   </div><div class="line">    textField.setText(event.message);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="清除粘性事件"><a href="#清除粘性事件" class="headerlink" title="清除粘性事件"></a>清除粘性事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">MessageEvent stickyEvent = EventBus.getDefault().getStickyEvent(MessageEvent.class);</div><div class="line">// Better check that an event was actually posted before</div><div class="line">if(stickyEvent != null) &#123;</div><div class="line">    // &quot;Consume&quot; the sticky event</div><div class="line">    EventBus.getDefault().removeStickyEvent(stickyEvent);</div><div class="line">    // Now do something with it</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="优先事项和事件取消"><a href="#优先事项和事件取消" class="headerlink" title="优先事项和事件取消"></a>优先事项和事件取消</h3><h4 id="用户优先级"><a href="#用户优先级" class="headerlink" title="用户优先级"></a>用户优先级</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// priority越大，级别越高，默认是0</div><div class="line">// 不影响具有不同线程的订阅者之间的顺序</div><div class="line">@Subscribe(priority = 1);</div><div class="line">public void onEvent(MessageEvent event) &#123;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="取消事件传递"><a href="#取消事件传递" class="headerlink" title="取消事件传递"></a>取消事件传递</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// 中止事件传递，后续事件不在调用,注意，只能在传递事件的时候调用</div><div class="line">// Called in the same thread (default)</div><div class="line">@Subscribe</div><div class="line">public void onEvent(MessageEvent event)&#123;</div><div class="line">    // Process the event</div><div class="line">    ...</div><div class="line">    // Prevent delivery to other subscribers</div><div class="line">    EventBus.getDefault().cancelEventDelivery(event) ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="用户索引"><a href="#用户索引" class="headerlink" title="用户索引"></a>用户索引</h3><p>这个是3的一个新功能。它是可选的优化，可加速初始化用户注册。</p>
+<p>要启用索引生成，需要用<code>annotationprocessor</code>属性将EventBus注释处理器添加到构建中。还设置一个参数<code>eventBusIndex</code>来指定生成的索引的完全限定类。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">android &#123;</div><div class="line">	defaultConfig &#123;</div><div class="line">		javaCompileOptions &#123;</div><div class="line">			annotationProcessOptions &#123;</div><div class="line">				arguments = [ eventBusIndex : &apos;com.example.myapp.MyEventBusIndex&apos; ]</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">dependencies &#123;</div><div class="line">	compile &apos;org.greenrobot:eventbus:3.0.0&apos;</div><div class="line">	annotationProcessor &apos;org.greenrobot:eventbus-annotation-processor:3.0.1&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也可以用 apt 的形式：</p>
+<p>ps:由于apt的限制，匿名内部类中的annotation不会被识别，会自动降级在运行时反射，此时，效率会降低</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">buildscript &#123;</div><div class="line">    dependencies &#123;</div><div class="line">        classpath &apos;com.neenbedankt.gradle.plugins:android-apt:1.8&apos;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">apply plugin: &apos;com.neenbedankt.android-apt&apos;</div><div class="line"> </div><div class="line">dependencies &#123;</div><div class="line">    compile &apos;org.greenrobot:eventbus:3.0.0&apos;</div><div class="line">    apt &apos;org.greenrobot:eventbus-annotation-processor:3.0.1&apos;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">apt &#123;</div><div class="line">    arguments &#123;</div><div class="line">        eventBusIndex &quot;com.example.myapp.MyEventBusIndex&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>设置EventBus传递它如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EventBus eventBus = EventBus.builder().addIndex(new MyEventBusIndex()).build();</div></pre></td></tr></table></figure>
+<p>或者使用默认实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">EventBus.builder().addIndex(new MyEventBusIndex()).installDefaultEventBus();</div><div class="line">// Now the default instance uses the given index. Use it like this:</div><div class="line">EventBus eventBus = EventBus.getDefault();</div></pre></td></tr></table></figure>
+<h3 id="混淆"><a href="#混淆" class="headerlink" title="混淆"></a>混淆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-keepattributes *Annotation*</div><div class="line">-keepclassmembers class ** &#123;</div><div class="line">    @org.greenrobot.eventbus.Subscribe &lt;methods&gt;;</div><div class="line">&#125;</div><div class="line">-keep enum org.greenrobot.eventbus.ThreadMode &#123; *; &#125;</div><div class="line"> </div><div class="line"># Only required if you use AsyncExecutor</div><div class="line">-keepclassmembers class * extends org.greenrobot.eventbus.util.ThrowableFailureEvent &#123;</div><div class="line">    &lt;init&gt;(java.lang.Throwable);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
     
 
     
@@ -511,9 +474,9 @@
 <div id="comments">
     <!-- 多说评论框 start -->
     <div class="ds-thread"
-        data-thread-key="2017/03/14/rxjava-first/"
-        data-url="https://lennyup.github.io/2017/03/14/rxjava-first/"
-        data-title="初识RxJava" id="ds-thread">
+        data-thread-key="2017/05/05/eventbus-first/"
+        data-url="https://lennyup.github.io/2017/05/05/eventbus-first/"
+        data-title="消息传递机制之EventBus" id="ds-thread">
     </div>
     <!-- 多说评论框 end -->
 </div>
@@ -530,7 +493,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/03/16/rxjava-retrofit/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/06/09/file-provider/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -544,7 +507,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/03/11/hexo-github/" id="post_nav-older" class="next-content">
+        <a href="/2017/04/21/choose-license/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
