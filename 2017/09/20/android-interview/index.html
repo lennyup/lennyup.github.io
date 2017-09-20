@@ -10,7 +10,7 @@
     
     <title>
         
-            归档: 2017/4 | 
+            android面试题以及一些贮备知识 | 
         
         lennyup&#39;s Notes
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://lennyup.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/4 | lennyup&#39;s Notes">
+    <meta property="og:title" content="android面试题以及一些贮备知识 | lennyup&#39;s Notes">
     <meta property="og:description" content="不得了">
     
 
@@ -216,226 +216,306 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Android核心"><span class="post-toc-number">2.</span> <span class="post-toc-text">Android核心</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ANR"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ANR</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Activity生命周期"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">Activity生命周期</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Service"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Service</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Intent"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">Intent</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NDK"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">NDK</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#资源池"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">资源池</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Style"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">Style</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/21/choose-license/">几种开源协议的简要分析</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言最近闲来无事，...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/21/choose-license/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 21, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/21/choose-license/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/20/android-builder/">浅析builder模式</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前言其实，我很早就...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/20/android-builder/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/20/android-builder/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/04/14/cardview-first/">Materal Design 之 CardView</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            最近看一些大佬的自定义view，其中用到了CardView，感觉好高大上，赶紧去恶补一下。（我默默的打开了源码）
-...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/04/14/cardview-first/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="lennyup's avatar">
-            </div>
-            <div>
-                <strong>lennyup</strong>
-                <span>4月 14, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="2017/04/14/cardview-first/" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                android面试题以及一些贮备知识
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>lennyup</strong>
+        <span>9月 20, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+    <!-- Leancloud Views -->
+        <a class="post_share-link" href="#">
+            <li class="mdl-menu__item">
+                <span id="/2017/09/20/android-interview/" class="leancloud-views_num" data-flag-title="android面试题以及一些贮备知识">
+     &nbsp;阅读量
+</span>
+
+            </li>
+        </a>
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        阅读量&nbsp;<span id="busuanzi_value_page_pv"></span>
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=android面试题以及一些贮备知识&url=https://lennyup.github.io//2017/09/20/android-interview/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=android面试题以及一些贮备知识&url=https://lennyup.github.io//2017/09/20/android-interview/index.html&via=lennyup" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://lennyup.github.io//2017/09/20/android-interview/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://lennyup.github.io//2017/09/20/android-interview/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这段时间，掘金出了个掘金秋招求职征文大赛，好想参加，但是自己貌似已经一年多没有参加过面试了（似的，我变懒了，这是不对的 ps： 捂脸哭），看见好多大佬的文章，感觉自己没有学过Android了，是时候把自己以前遗落的再次捡起来了，这里只是提供一些面试题和一些基础的知识，可能会不全，甚至会有错误（清喷），我会不定时更新的。</p>
+<h3 id="Android核心"><a href="#Android核心" class="headerlink" title="Android核心"></a>Android核心</h3><h4 id="ANR"><a href="#ANR" class="headerlink" title="ANR"></a>ANR</h4><p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/anr-issue.png" alt=""></p>
+<p>解答：在Android上，如果你的应用程序有一段时间响应不够灵敏，系统会向用户显示一个对话框，这个对话框称作无响应（ANR： Appplication Not Responding）对话框。<br>默认情况下，在android中的Activity最长执行时间是5秒，BroadcastReceiver的最长之行事件则是10秒。超出就会提示无响应对话框。</p>
+<p>三种常见类型</p>
+<ul>
+<li><p>KeyDispathTimeout(5 seconds) –主要类型</p>
+  <font color="#A9A9A9" face="黑体">按键或触摸事件在特定时间内无响应</font></li>
+<li><p>BroadcastTimeout(10 seconds)</p>
+  <font color="#A9A9A9" face="黑体">BroadcastReceiver在特定时间内无法处理完成</font></li>
+<li><p>SeriviceTimeout(20 seconds) –小概率类型</p>
+  <font color="#A9A9A9" face="黑体">Service在特定的时间内无法处理完成</font>
+
+</li>
+</ul>
+<h4 id="Activity生命周期"><a href="#Activity生命周期" class="headerlink" title="Activity生命周期"></a>Activity生命周期</h4><p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/activity-life.png" alt=""></p>
+<p>解答： 答案是 B C</p>
+<p>对于A，正确的应该是<br><code>在AndroidManifest.xml中设置 android:configChanges=&quot;orientation|screenSize&quot;，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法</code></p>
+<p>对于D，正在操作的应用属于 前台进程，当内存不足的时候，也不会被杀死的</p>
+<h4 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h4><p>1、<img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/service1.png" alt=""></p>
+<p>解答： bindService是异步调用和Service进行绑定，如果绑定成功，则会调用ServiceConnection的onServiceConnectes当调用bindService方法后就会回调Activity的onServiceConnected，在这个方法中会向Activity中传递一个IBinder的实例，Activity需要保存这个实例。</p>
+<p>2、<img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/service2.png" alt=""></p>
+<p>解答：AD<br><img src="https://uploadfiles.nowcoder.com/images/20161103/7327747_1478142515011_5191CAD3158E038AE9D09ED7CF1D5165" alt=""></p>
+<h4 id="Intent"><a href="#Intent" class="headerlink" title="Intent"></a>Intent</h4><p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/intent-issues.png" alt=""></p>
+<p>解答： ABCD</p>
+<ul>
+<li>Serializable: 将Java对象序列化为二进制文件的Java序列化技术中一个较为重要的技术点，在大部分情况下，开发人员只需要实现Serializable 接口，使用ObjecInputStream和ObjectOutputStream进行对象的读写。</li>
+<li>Charsequence 在JDK1.4中，引入CharSequence接口，实现这个接口的类有：CharBuffer、String、StringBuffer这四个类。</li>
+<li>Parcelable：android提供了一种新的类型：Parcel。本类被用作封装数据的容器，封装后的数据可以通过Intent或IPC传递。除了基本类型意外，只有实现了Parcelable接口的类才能被放入Parcel中。</li>
+<li>Bundle：Bundle是将数据传递到另一个上下文中或保存或回复你自己状态的数据存储方式。它的数据不是持久化状态。</li>
+</ul>
+<h4 id="NDK"><a href="#NDK" class="headerlink" title="NDK"></a>NDK</h4><p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/ndk.png" alt=""></p>
+<p>解答： ABCD</p>
+<p><a href="http://www.cnblogs.com/devinzhang/archive/2012/02/29/2373729.html" target="_blank" rel="external">Android之NDK开发</a></p>
+<h4 id="资源池"><a href="#资源池" class="headerlink" title="资源池"></a>资源池</h4><p> <img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/resouce.png" alt=""></p>
+<p> 解答：<br>A.Message提供了消息池，有静态方法Obtain从消息池中取对象；<br>B.Thread默认不提供资源池，除非使用线程池ThreadPool管理；<br>C.AsynTask是线程池改造的，池里 默认提供（核数+1）个线程进行并发操作，最大支持（核数  * 2 + 1）个线程，超过后会丢弃其他任务；<br>D.Looper，每个Looper创建时创建一个消息队列和线程对象，也不是资源池；<br>因此答案为AC</p>
+<h4 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h4><p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/style.png" alt=""></p>
+<p>解答：<br>官方文档定义如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">A style is a collection of properties that specify the look and format for a View or window</div><div class="line"></div><div class="line">A theme is a style applied to an entire Activity or application</div></pre></td></tr></table></figure>
+<p>补充一句：style和theme本质上就是同一东西，xml格式万千相同，只是我用在activity上我就叫它theme，我用在view上我就叫它style。唯一的区别就是style里头控制的各个属性了，某些属性是只有针对activity才能生效的。所以style可以作用在activity上，但是theme却不能反过来作用在view上</p>
+<p>theme是被final标识了，不能被继承 ABD</p>
+<p>未完待续。。。。。。。。。。。</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #0097A7 !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #0097A7 !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #0097A7 !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key="2017/09/20/android-interview/"
+        data-url="https://lennyup.github.io/2017/09/20/android-interview/"
+        data-title="android面试题以及一些贮备知识" id="ds-thread">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/09/15/rn-native/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
