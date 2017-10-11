@@ -18,7 +18,7 @@
 <meta property="og:description" content="每天进步一点，没准哪天自己也会成为大佬呢。
 现在，我开始研究最近特别火的消息传递机制EventBus.以前，对于activity和fragment之间的通信可以用接口回调的方式实现，使用起来会略有些麻烦。现在可以用EventBus，好用简单。
 官方说明是这样定义的：EventBus是针对Android的发布／订阅事件总线。轻松实现各个组件之间的传递消息，可读性高，耦合度低。下面以3.0为例，学习和">
-<meta property="og:updated_time" content="2017-10-10T10:26:12.000Z">
+<meta property="og:updated_time" content="2017-10-11T06:14:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="消息传递机制之EventBus">
 <meta name="twitter:description" content="每天进步一点，没准哪天自己也会成为大佬呢。
@@ -361,6 +361,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用EventBus的三个步骤"><span class="toc-number">1.</span> <span class="toc-text">使用EventBus的三个步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#定义事件"><span class="toc-number">1.1.</span> <span class="toc-text">定义事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#准备订阅者"><span class="toc-number">1.2.</span> <span class="toc-text">准备订阅者</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#注册订阅以及取消订阅"><span class="toc-number">1.2.1.</span> <span class="toc-text">注册订阅以及取消订阅</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发布事件"><span class="toc-number">1.3.</span> <span class="toc-text">发布事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#切换线程"><span class="toc-number">2.</span> <span class="toc-text">切换线程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#POSTING"><span class="toc-number">2.1.</span> <span class="toc-text">POSTING</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MAIN"><span class="toc-number">2.2.</span> <span class="toc-text">MAIN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#BACKGROUND"><span class="toc-number">2.3.</span> <span class="toc-text">BACKGROUND</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ASYNC"><span class="toc-number">2.4.</span> <span class="toc-text">ASYNC</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EventBusBuilder配置"><span class="toc-number">3.</span> <span class="toc-text">EventBusBuilder配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StickyEvent"><span class="toc-number">4.</span> <span class="toc-text">StickyEvent</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#清除粘性事件"><span class="toc-number">4.1.</span> <span class="toc-text">清除粘性事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优先事项和事件取消"><span class="toc-number">5.</span> <span class="toc-text">优先事项和事件取消</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用户优先级"><span class="toc-number">5.1.</span> <span class="toc-text">用户优先级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#取消事件传递"><span class="toc-number">5.2.</span> <span class="toc-text">取消事件传递</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用户索引"><span class="toc-number">6.</span> <span class="toc-text">用户索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混淆"><span class="toc-number">7.</span> <span class="toc-text">混淆</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>

@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://lennyup.github.io/2017/09/15/rn-native/index.html">
 <meta property="og:site_name" content="Lenny的博客">
 <meta property="og:description" content="一、前言 最近一直在做公司项目的 4.0 版本重构，在重构中有一个需求，要求对FlatList的下拉刷新做统一的修改，就是要达到Android和IOS的效果一致(emmmm), React Native官方给的样式是两端不一样的效果，在Android端，是用的Swiperefresh。在网上搜到的一些都是很久没有更新的git项目或者就是达不到我们高大上的 UI的要求，于是乎，我走上了封装原生组件的">
-<meta property="og:updated_time" content="2017-10-10T10:26:33.000Z">
+<meta property="og:updated_time" content="2017-10-11T06:15:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React Native 集成原生组件（Android）">
 <meta name="twitter:description" content="一、前言 最近一直在做公司项目的 4.0 版本重构，在重构中有一个需求，要求对FlatList的下拉刷新做统一的修改，就是要达到Android和IOS的效果一致(emmmm), React Native官方给的样式是两端不一样的效果，在Android端，是用的Swiperefresh。在网上搜到的一些都是很久没有更新的git项目或者就是达不到我们高大上的 UI的要求，于是乎，我走上了封装原生组件的">
@@ -355,6 +355,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、主要步骤"><span class="toc-number">2.</span> <span class="toc-text">二、主要步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、原生组件"><span class="toc-number">2.1.</span> <span class="toc-text">1、原生组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、创建ViewManager子类"><span class="toc-number">2.2.</span> <span class="toc-text">2、创建ViewManager子类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、使用-ReactProp-或者-ReactPropGroup-注解相关方法对外可以被调用设置属性"><span class="toc-number">2.3.</span> <span class="toc-text">3、使用@ReactProp(或者@ReactPropGroup)注解相关方法对外可以被调用设置属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、事件"><span class="toc-number">3.</span> <span class="toc-text">4、事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5、创建-Event"><span class="toc-number">3.1.</span> <span class="toc-text">5、创建 Event</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、创建Package，注册Manager"><span class="toc-number">3.2.</span> <span class="toc-text">6、创建Package，注册Manager</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、Application添加-Package"><span class="toc-number">3.3.</span> <span class="toc-text">7、Application添加 Package</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8、实现JavaScript模块"><span class="toc-number">3.4.</span> <span class="toc-text">8、实现JavaScript模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考资料"><span class="toc-number">5.</span> <span class="toc-text">参考资料</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
