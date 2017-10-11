@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>https://lennyup.github.io/2017/09/22/android-java/</loc>
+    <lastmod>2017-10-11T09:15:52.000Z</lastmod>
+    <data>
+        <display>
+        <title>android需要的Java基础（复习篇）</title>
+        <pubTime>2017-09-22T03:21:17.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lennyup.github.io/2017/03/16/rxjava-retrofit/</loc>
     <lastmod>2017-10-11T06:15:16.000Z</lastmod>
     <data>
@@ -180,23 +197,6 @@
         <display>
         <title>算法——初篇</title>
         <pubTime>2017-03-20T02:13:11.000Z</pubTime>
-        
-        <tag>Java</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lennyup.github.io/2017/09/22/android-java/</loc>
-    <lastmod>2017-10-11T06:11:44.000Z</lastmod>
-    <data>
-        <display>
-        <title>android需要的Java基础（复习篇）</title>
-        <pubTime>2017-09-22T03:21:17.000Z</pubTime>
         
         <tag>Java</tag>
          
