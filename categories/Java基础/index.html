@@ -6,18 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lennyup.github.io">
-  <title>浅析builder模式 | Lenny的博客</title>
+  <title>Category: Java基础 | Lenny的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言其实，我很早就想总结一下自己多熟悉的设计模式，一直找不到合适的切入点来写。最近看到 AlertDialog,心想这不就是一个活生生的Builder模式的例子吗，于是乎，我赶紧敲了敲自己昏昏欲睡的脑袋，抓住自己呼之欲出的灵感，奋笔疾书！">
-<meta property="og:type" content="article">
-<meta property="og:title" content="浅析builder模式">
-<meta property="og:url" content="https://lennyup.github.io/2017/04/20/android-builder/index.html">
+  <meta name="description" content="不得了">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lenny的博客">
+<meta property="og:url" content="https://lennyup.github.io/categories/Java基础/index.html">
 <meta property="og:site_name" content="Lenny的博客">
-<meta property="og:description" content="前言其实，我很早就想总结一下自己多熟悉的设计模式，一直找不到合适的切入点来写。最近看到 AlertDialog,心想这不就是一个活生生的Builder模式的例子吗，于是乎，我赶紧敲了敲自己昏昏欲睡的脑袋，抓住自己呼之欲出的灵感，奋笔疾书！">
-<meta property="og:updated_time" content="2017-10-11T06:14:24.000Z">
+<meta property="og:description" content="不得了">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅析builder模式">
-<meta name="twitter:description" content="前言其实，我很早就想总结一下自己多熟悉的设计模式，一直找不到合适的切入点来写。最近看到 AlertDialog,心想这不就是一个活生生的Builder模式的例子吗，于是乎，我赶紧敲了敲自己昏昏欲睡的脑袋，抓住自己呼之欲出的灵感，奋笔疾书！">
+<meta name="twitter:title" content="Lenny的博客">
+<meta name="twitter:description" content="不得了">
   
     <link rel="alternative" href="/atom.xml" title="Lenny的博客" type="application/atom+xml">
   
@@ -157,246 +156,79 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-android-builder" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      浅析builder模式
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/10/12/design-pattern/" class="archive-article-date">
+  	<time datetime="2017-10-12T03:46:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-12</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/10/12/design-pattern/">Android需要掌握的设计模式（复习篇）</a>
     </h1>
   
 
-        
-        <a href="/2017/04/20/android-builder/" class="archive-article-date">
-  	<time datetime="2017-04-20T02:56:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>其实，我很早就想总结一下自己多熟悉的设计模式，一直找不到合适的切入点来写。最近看到 <code>AlertDialog</code>,心想这不就是一个活生生的<code>Builder</code>模式的例子吗，于是乎，我赶紧敲了敲自己昏昏欲睡的脑袋，<br>抓住自己呼之欲出的灵感，奋笔疾书！<br><a id="more"></a></p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>建造者模式: 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
-<p>举个栗子：大学生去食堂打饭，可以选四菜一汤，菜系任意选，那么打饭的这个过程 和他出来的不同搭配 就需要进行分离。</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">AlertDialog.<span class="keyword">Builder </span><span class="keyword">builder=new</span></div><div class="line">                AlertDialog.<span class="keyword">Builder(this)</span></div><div class="line">                .setTitle(<span class="string">"My Dialog"</span>)</div><div class="line">                .setMessage(<span class="string">"This is Test Dialog"</span>)</div><div class="line">                .setIcon(R.drawable.icon)<span class="comment">;</span></div><div class="line">        AlertDialog <span class="keyword">dialog=builder.create();</span></div></pre></td></tr></table></figure>
-<p>如上面的代码，我们不是通过 new 的方式来直接创建一个对象。而是通过其Builder 来配置，然后再<code>create</code>出来。</p>
-<h3 id="Builder模式"><a href="#Builder模式" class="headerlink" title="Builder模式"></a>Builder模式</h3><p>下面我们通过看<code>AlertDialog</code> 的源码来解析下 <code>Builder</code> 模式，<br>先来看下它的构造方法：</p>
-<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">protected</span> <span class="title">AlertDialog</span><span class="params">(Context context)</span> </span>&#123;</div><div class="line">     <span class="keyword">super</span>((Context)<span class="keyword">null</span>, <span class="keyword">false</span>, (OnCancelListener)<span class="keyword">null</span>);</div><div class="line">     <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Stub!"</span>);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<p>可以看出来，方法的修饰是<code>protected</code> ,也就是说除了它的子类之外，其他类无法访问这个方法，所以这就不能直接创建<code>AlertDialog</code>的实例了，只能通过<code>Builder</code>的方式。</p>
-<p>我们来看下<code>Builder</code>的代码：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">        <span class="keyword">public</span> static <span class="class"><span class="keyword">class</span> <span class="title">Builder</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">final</span> AlertController.AlertParams P;</div><div class="line"></div><div class="line">        <span class="keyword">public</span> Builder(<span class="meta">@NonNull</span> Context context) &#123;</div><div class="line">            <span class="keyword">this</span>(context, resolveDialogTheme(context, <span class="number">0</span>));</div><div class="line">        &#125;</div><div class="line">...</div><div class="line">        <span class="keyword">public</span> Builder setTitle(<span class="meta">@Nullable</span> CharSequence title) &#123;</div><div class="line">            P.mTitle = title;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">public</span> Builder setMessage(<span class="meta">@Nullable</span> CharSequence message) &#123;</div><div class="line">            P.mMessage = message;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">public</span> Builder setIcon(<span class="meta">@DrawableRes</span> int iconId) &#123;</div><div class="line">            P.mIconId = iconId;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    .....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这里只是其中的一部分，具体的可以去阅读下它的源码，在这里可以看出，<code>Builder</code>是<code>AlertDialog</code>的一个静态内部类，这里就列出了三个方法<br>用于分别设置其信息，标题和图标。这里的重点在于没个方法的返回值都是其自身。这样可以便利的设置自己的配置，也切法呦逻辑感。</p>
-<p>来看下 <code>create</code>方法的实现：</p>
-<figure class="highlight sqf"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public AlertDialog create() &#123;</div><div class="line">     <span class="comment">// Context has already been wrapped with the appropriate theme.</span></div><div class="line">     final AlertDialog <span class="built_in">dialog</span> = new AlertDialog(P.mContext, <span class="number">0</span>, <span class="literal">false</span>);</div><div class="line">     P.<span class="built_in">apply</span>(<span class="built_in">dialog</span>.mAlert);</div><div class="line">     <span class="built_in">dialog</span>.setCancelable(P.mCancelable);</div><div class="line">     <span class="keyword">if</span> (P.mCancelable) &#123;</div><div class="line">         <span class="built_in">dialog</span>.setCanceledOnTouchOutside(<span class="literal">true</span>);</div><div class="line">     &#125;</div><div class="line">     <span class="built_in">dialog</span>.setOnCancelListener(P.mOnCancelListener);</div><div class="line">     <span class="built_in">dialog</span>.setOnDismissListener(P.mOnDismissListener);</div><div class="line">     <span class="keyword">if</span> (P.mOnKeyListener != null) &#123;</div><div class="line">         <span class="built_in">dialog</span>.setOnKeyListener(P.mOnKeyListener);</div><div class="line">     &#125;</div><div class="line">     return <span class="built_in">dialog</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-<p>最后，通过我们之前的配置，关联到我们现在创建的这个实例上来。完成创建。</p>
-<p>还有其他的地方也用到了了<code>Builder</code>模式，比如说 OkHttp里的<code>Request.Builder</code>.</p>
-<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><ul>
-<li><p>当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。</p>
-</li>
-<li><p>当构造过程必须允许被构造的对象有不同的表示时。</p>
-</li>
-<li><p>Builder模式要解决的也正是这样的问题：</p>
-</li>
-</ul>
-<p>　　- 当我们要创建的对象很复杂的时候（通常是由很多其他的对象组合而成），</p>
-<p>　　- 我们要复杂对象的创建过程和这个对象的表示（展示）分离开来，<br>这样做的好处就是通过一步步的进行复杂对象的构建，</p>
-<p>　　- 由于在每一步的构造过程中可以引入参数，使得经过相同的步骤创建最后得到的对象的展示不一样。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这里只是简单的从 Android的角度去分析<code>Builder</code>模式，简化了很多，<code>Builder</code>模式的使用并不会使我们的代码运行速度加快。设计模式总的来说就是对是封装、继承、多态和关联的反复使用；是一种编程技巧，让我们能写出高质量代码的技巧。</p>
-
-      
-      <!-- 版权声明 -->
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixin.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Java基础//" class="article-tag-list-link color2">Java基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-      <span id="busuanzi_container_page_pv">
-        |阅读量(<span id="busuanzi_value_page_pv"></span>)
-      </span>
-      
 
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://lennyup.github.io/2017/04/20/android-builder/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/04/21/choose-license/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          几种开源协议的简要分析
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/04/14/cardview-first/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Materal Design 之 CardView</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">2.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Builder模式"><span class="toc-number">3.</span> <span class="toc-text">Builder模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用场景"><span class="toc-number">4.</span> <span class="toc-text">使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
+    </div></section>
   
 
-  
-
-  
-
-  
-
-  
-  <div id="gitment-ctn"></div> 
-<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
-<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: "https://lennyup.github.io/2017/04/20/android-builder/",
-  owner: 'lennyup',
-  repo: 'lennyup.github.io',
-  oauth: {
-    client_id: 'e5e4cf176326644518f2',
-    client_secret: '206f897f479102894818041d557a9a1f0f1dcbd0',
-  },
-})
-gitment.render('gitment-ctn')
-</script>
-  
+    
 
 
           </div>
@@ -429,10 +261,10 @@ gitment.render('gitment-ctn')
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
