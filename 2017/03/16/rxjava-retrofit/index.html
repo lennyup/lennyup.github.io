@@ -5,14 +5,14 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://lennyup.github.io">
+  <link rel="dns-prefetch" href="https://imenv.com">
   <title>初识rxjava（二） | Lenny的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="上一篇，简单的认识了最近火爆异常的RxJava,如果你对RxJava还是很陌生，你可以去网上找一下相关知识，当然也可以看我的上一篇文章初识RxJava。这里我通过RxJava的使用场景之一——与Retrofit相结合，来具体看下RxJava的使用。
 基本RxJava和Retrofit结合使用的最基本的格式：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识rxjava（二）">
-<meta property="og:url" content="https://lennyup.github.io/2017/03/16/rxjava-retrofit/index.html">
+<meta property="og:url" content="https://imenv.com/2017/03/16/rxjava-retrofit/index.html">
 <meta property="og:site_name" content="Lenny的博客">
 <meta property="og:description" content="上一篇，简单的认识了最近火爆异常的RxJava,如果你对RxJava还是很陌生，你可以去网上找一下相关知识，当然也可以看我的上一篇文章初识RxJava。这里我通过RxJava的使用场景之一——与Retrofit相结合，来具体看下RxJava的使用。
 基本RxJava和Retrofit结合使用的最基本的格式：">
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>上一篇，简单的认识了最近火爆异常的RxJava,如果你对RxJava还是很陌生，你可以去网上找一下相关知识，当然也可以看我的上一篇文章<a href="https://lennyup.github.io/2017/03/14/rxjava-first/">初识RxJava</a>。这里我通过RxJava的使用场景之一——与Retrofit相结合，来具体看下RxJava的使用。</p>
+        <p>上一篇，简单的认识了最近火爆异常的RxJava,如果你对RxJava还是很陌生，你可以去网上找一下相关知识，当然也可以看我的上一篇文章<a href="https://lennyup.github.io/2017/03/14/rxjava-first/" target="_blank" rel="external">初识RxJava</a>。这里我通过RxJava的使用场景之一——与Retrofit相结合，来具体看下RxJava的使用。</p>
 <h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><p>RxJava和Retrofit结合使用的最基本的格式：<br><a id="more"></a><br>用<code>subscribeOn</code> 和<code>observeOn</code>来控制线程，并通过<code>subscribe()</code>来触发网络请求的开始。代码的大致形式：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">api</span><span class="selector-class">.getData</span>()</div><div class="line">   <span class="selector-class">.subscribeOn</span>(<span class="selector-tag">Schedulers</span><span class="selector-class">.io</span>())</div><div class="line">   <span class="selector-class">.observeOn</span>(<span class="selector-tag">AndroidSchedulers</span><span class="selector-class">.mainThread</span>())</div><div class="line">   <span class="selector-class">.subscribe</span>(<span class="selector-tag">observer</span>);</div></pre></td></tr></table></figure>
 <p>具体的来看下我写的例子（ps： 一些布局什么的我就不往上贴了）</p>
@@ -240,7 +240,7 @@
 <h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>RxJava中有一个类叫做<code>SubJect</code>,它既是<code>Obserevable</code>又是<code>Observer</code>,可以用做中间件来传递数据。例如，用它的子类<code>BehaviorSubject</code>来缓存数据。大致代码如下：</p>
 <figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">api.getData<span class="comment">()</span></div><div class="line">   .subscribe<span class="comment">(behavioSubject)</span>;<span class="comment">//缓存数据</span></div><div class="line">   behaviorSubject.subscribe<span class="comment">(observer)</span> <span class="comment">//把缓存数据发送给observer</span></div></pre></td></tr></table></figure>
 <p>如有任何问题请联系我微博<a href="http://weibo.com/3652601464/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo&amp;is_all=1" target="_blank" rel="external">空白_Lester</a></p>
-<p>本文地址 <a href="https://lennyup.github.io/2017/03/16/rxjava-retrofit/">https://lennyup.github.io/2017/03/16/rxjava-retrofit</a></p>
+<p>本文地址 <a href="https://lennyup.github.io/2017/03/16/rxjava-retrofit/" target="_blank" rel="external">https://lennyup.github.io/2017/03/16/rxjava-retrofit</a></p>
 
       
       <!-- 版权声明 -->
@@ -346,7 +346,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://lennyup.github.io/2017/03/16/rxjava-retrofit/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://imenv.com/2017/03/16/rxjava-retrofit/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -423,7 +423,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://lennyup.github.io/2017/03/16/rxjava-retrofit/",
+  id: "https://imenv.com/2017/03/16/rxjava-retrofit/",
   owner: 'lennyup',
   repo: 'lennyup.github.io',
   oauth: {
@@ -541,19 +541,19 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">基础</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">React Native</a>
               </li>
             
             <div class="clearfix"></div>
