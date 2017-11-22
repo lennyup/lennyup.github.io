@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/lennyup/img-warehouse/master/ndk.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lennyup/img-warehouse/master/resouce.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lennyup/img-warehouse/master/style.png">
-<meta property="og:updated_time" content="2017-10-11T06:14:30.000Z">
+<meta property="og:updated_time" content="2017-10-30T09:27:33.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="android面试题以及一些贮备知识">
 <meta name="twitter:description" content="前言这段时间，掘金出了个掘金秋招求职征文大赛，好想参加，但是自己貌似已经一年多没有参加过面试了（似的，我变懒了，这是不对的 ps： 捂脸哭），看见好多大佬的文章，感觉自己没有学过Android了，是时候把自己以前遗落的再次捡起来了，这里只是提供一些面试题和一些基础的知识，可能会不全，甚至会有错误（清喷），我会不定时更新的。">
@@ -203,6 +203,21 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这段时间，掘金出了个掘金秋招求职征文大赛，好想参加，但是自己貌似已经一年多没有参加过面试了（似的，我变懒了，这是不对的 ps： 捂脸哭），看见好多大佬的文章，感觉自己没有学过Android了，是时候把自己以前遗落的再次捡起来了，这里只是提供一些面试题和一些基础的知识，可能会不全，甚至会有错误（清喷），我会不定时更新的。<br><a id="more"></a></p>
+<h3 id="JAVA知识"><a href="#JAVA知识" class="headerlink" title="JAVA知识"></a>JAVA知识</h3><h4 id="1-String、StringBuilder、StringBuffer的区别"><a href="#1-String、StringBuilder、StringBuffer的区别" class="headerlink" title="1. String、StringBuilder、StringBuffer的区别"></a>1. String、StringBuilder、StringBuffer的区别</h4><ol>
+<li>在执行速度上：StringBuilder &gt; StringBuffer</li>
+<li>StringBuffer与StringBuilder，它们是字符串变量，是可改变的对象，每当我们用它们对字符串做操作时，实际上是在一个对象上操作的，不像String一样创建一些对象进行操作。</li>
+<li>StringBuilder: 线程非安全的 StringBuffer: 线程安全的</li>
+</ol>
+<p>使用总结：</p>
+<ol>
+<li>如果要操作少量的数据用String</li>
+<li>单线程操作字符串缓冲区下操作大量数据用StringBuilder</li>
+<li>多线程操作字符串缓冲区下操作大量数据用StringBuffer</li>
+</ol>
+<h4 id="2-Overload（重载）和Override（重写）的区别"><a href="#2-Overload（重载）和Override（重写）的区别" class="headerlink" title="2.Overload（重载）和Override（重写）的区别"></a>2.Overload（重载）和Override（重写）的区别</h4><ol>
+<li>重载是指不同的函数使用相同的函数名，但是函数的参数个数或者类型不同。重写是指派生类中重新对基类中的虚方法重新实现，函数名和参数都一样，只是实现体不同。</li>
+<li>重写和重载都是Java多态性的不同表现。重写是父类与子类之间多态性的表现，而重载是一个类中多态性的表现。</li>
+</ol>
 <h3 id="Android核心"><a href="#Android核心" class="headerlink" title="Android核心"></a>Android核心</h3><h4 id="ANR"><a href="#ANR" class="headerlink" title="ANR"></a>ANR</h4><p><img src="https://raw.githubusercontent.com/lennyup/img-warehouse/master/anr-issue.png" alt=""></p>
 <p>解答：在Android上，如果你的应用程序有一段时间响应不够灵敏，系统会向用户显示一个对话框，这个对话框称作无响应（ANR： Appplication Not Responding）对话框。<br>默认情况下，在android中的Activity最长执行时间是5秒，BroadcastReceiver的最长之行事件则是10秒。超出就会提示无响应对话框。</p>
 <p>三种常见类型</p>
@@ -400,7 +415,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android核心"><span class="toc-number">2.</span> <span class="toc-text">Android核心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ANR"><span class="toc-number">2.1.</span> <span class="toc-text">ANR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Activity生命周期"><span class="toc-number">2.2.</span> <span class="toc-text">Activity生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Service"><span class="toc-number">2.3.</span> <span class="toc-text">Service</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intent"><span class="toc-number">2.4.</span> <span class="toc-text">Intent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NDK"><span class="toc-number">2.5.</span> <span class="toc-text">NDK</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#资源池"><span class="toc-number">2.6.</span> <span class="toc-text">资源池</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Style"><span class="toc-number">2.7.</span> <span class="toc-text">Style</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JAVA知识"><span class="toc-number">2.</span> <span class="toc-text">JAVA知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-String、StringBuilder、StringBuffer的区别"><span class="toc-number">2.1.</span> <span class="toc-text">1. String、StringBuilder、StringBuffer的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Overload（重载）和Override（重写）的区别"><span class="toc-number">2.2.</span> <span class="toc-text">2.Overload（重载）和Override（重写）的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Android核心"><span class="toc-number">3.</span> <span class="toc-text">Android核心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ANR"><span class="toc-number">3.1.</span> <span class="toc-text">ANR</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Activity生命周期"><span class="toc-number">3.2.</span> <span class="toc-text">Activity生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Service"><span class="toc-number">3.3.</span> <span class="toc-text">Service</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Intent"><span class="toc-number">3.4.</span> <span class="toc-text">Intent</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NDK"><span class="toc-number">3.5.</span> <span class="toc-text">NDK</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#资源池"><span class="toc-number">3.6.</span> <span class="toc-text">资源池</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Style"><span class="toc-number">3.7.</span> <span class="toc-text">Style</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -539,11 +554,23 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">architecture components</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">反射</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,7 +578,7 @@ gitment.render('gitment-ctn')
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">基础</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">

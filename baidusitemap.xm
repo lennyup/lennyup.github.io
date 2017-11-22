@@ -4,6 +4,71 @@
 
     
   <url>
+    <loc>http://blog.imemv.com/2017/11/21/android-architecture-components/</loc>
+    <lastmod>2017-11-22T09:10:24.149Z</lastmod>
+    <data>
+        <display>
+        <title>浅析Android Architecture Components</title>
+        <pubTime>2017-11-21T06:29:03.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>框架</tag>
+         
+        <tag>architecture components</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android框架" url="http://blog.imemv.com/categories/Android%E6%A1%86%E6%9E%B6/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.imemv.com/2017/11/07/java-reflection/</loc>
+    <lastmod>2017-11-07T10:07:04.325Z</lastmod>
+    <data>
+        <display>
+        <title>Java基础之反射</title>
+        <pubTime>2017-11-07T05:54:58.000Z</pubTime>
+        
+        <tag>Java</tag>
+         
+        <tag>反射</tag>
+         
+        <tag>基础</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java基础" url="http://blog.imemv.com/categories/Java%E5%9F%BA%E7%A1%80/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.imemv.com/2017/09/20/android-interview/</loc>
+    <lastmod>2017-10-30T09:27:33.055Z</lastmod>
+    <data>
+        <display>
+        <title>android面试题以及一些贮备知识</title>
+        <pubTime>2017-09-20T03:20:42.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.imemv.com/2017/10/12/design-pattern/</loc>
     <lastmod>2017-10-24T08:31:33.779Z</lastmod>
     <data>
@@ -13,9 +78,9 @@
         
         <tag>Java</tag>
          
-        <tag>设计模式</tag>
-         
         <tag>基础</tag>
+         
+        <tag>设计模式</tag>
          
          
            
@@ -170,23 +235,6 @@
         <display>
         <title>Materal Design 之 CardView</title>
         <pubTime>2017-04-14T03:41:55.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.imemv.com/2017/09/20/android-interview/</loc>
-    <lastmod>2017-10-11T06:14:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>android面试题以及一些贮备知识</title>
-        <pubTime>2017-09-20T03:20:42.000Z</pubTime>
         
         <tag>Android</tag>
          

@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.imemv.com/2017/11/21/android-architecture-components/</loc>
+    
+    <lastmod>2017-11-22T09:10:24.149Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.imemv.com/2017/11/07/java-reflection/</loc>
+    
+    <lastmod>2017-11-07T10:07:04.325Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.imemv.com/2017/09/20/android-interview/</loc>
+    
+    <lastmod>2017-10-30T09:27:33.055Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.imemv.com/2017/10/12/design-pattern/</loc>
     
     <lastmod>2017-10-24T08:31:33.779Z</lastmod>
@@ -68,13 +89,6 @@
     <loc>http://blog.imemv.com/2017/04/14/cardview-first/</loc>
     
     <lastmod>2017-10-11T06:14:38.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.imemv.com/2017/09/20/android-interview/</loc>
-    
-    <lastmod>2017-10-11T06:14:30.000Z</lastmod>
     
   </url>
   
